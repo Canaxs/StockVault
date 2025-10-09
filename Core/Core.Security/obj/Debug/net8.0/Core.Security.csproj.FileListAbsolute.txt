@@ -1,0 +1,11 @@
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\bin\Debug\net8.0\Core.Security.deps.json
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\bin\Debug\net8.0\Core.Security.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\bin\Debug\net8.0\Core.Security.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.AssemblyInfoInputs.cache
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.AssemblyInfo.cs
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.csproj.CoreCompileInputs.cache
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\refint\Core.Security.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\ref\Core.Security.dll

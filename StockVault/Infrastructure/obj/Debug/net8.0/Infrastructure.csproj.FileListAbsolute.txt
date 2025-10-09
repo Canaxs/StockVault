@@ -1,0 +1,11 @@
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
