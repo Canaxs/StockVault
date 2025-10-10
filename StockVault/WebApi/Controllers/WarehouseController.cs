@@ -25,7 +25,6 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Update([FromBody] UpdateWarehouseCommand updateWarehouseCommand)
         {
             UpdatedWarehouseResponse response = await Mediator.Send(updateWarehouseCommand);
-
             return Ok(response);
         }
 

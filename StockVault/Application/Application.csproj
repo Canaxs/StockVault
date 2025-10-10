@@ -7,17 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Customers\Commands\" />
-    <Folder Include="Features\Customers\Constants\" />
-    <Folder Include="Features\Customers\Profiles\" />
-    <Folder Include="Features\Customers\Queries\" />
-    <Folder Include="Features\Customers\Rules\" />
+    <Folder Include="Features\Shipments\Commands\Delete\" />
+    <Folder Include="Features\Shipments\Commands\Update\" />
+    <Folder Include="Features\Shipments\Queries\GetList\" />
     <Folder Include="Features\Users\" />
-    <Folder Include="Features\Shipments\Commands\" />
-    <Folder Include="Features\Shipments\Constants\" />
-    <Folder Include="Features\Shipments\Profiles\" />
-    <Folder Include="Features\Shipments\Queries\" />
-    <Folder Include="Features\Shipments\Rules\" />
   </ItemGroup>
 
   <ItemGroup>
