@@ -1,5 +1,15 @@
 ﻿using Application.Features.Products.Commands.Create;
+using Application.Features.Products.Commands.Delete;
+using Application.Features.Products.Commands.Update;
+using Application.Features.Products.Queries.GetById;
+using Application.Features.Products.Queries.GetList;
 using Application.Features.Warehouses.Commands.Create;
+using Application.Features.Warehouses.Commands.Delete;
+using Application.Features.Warehouses.Commands.Update;
+using Application.Features.Warehouses.Queries.GetById;
+using Application.Features.Warehouses.Queries.GetList;
+using Core.Application.Requests;
+using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -12,6 +22,36 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add([FromBody] CreateProductCommand createProductCommand)
         {
             CreatedProductResponse response = await Mediator.Send(createProductCommand);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateProductCommand updateProductCommand)
+        {
+            UpdatedProductResponse response = await Mediator.Send(updateProductCommand);
+            return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            DeletedProductResponse response = await Mediator.Send(new DeleteProductCommand { Id = id });
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromRoute] int id)
+        {
+            GetByIdProductQuery getByIdProductQuery = new() { Id = id };
+            GetByIdProductResponse response = await Mediator.Send(getByIdProductQuery);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
+        {
+            GetListProductQuery getListProductQuery = new() { PageRequest = pageRequest };
+            GetListResponse<GetListProductListItemDto> response = await Mediator.Send(getListProductQuery);
             return Ok(response);
         }
     }

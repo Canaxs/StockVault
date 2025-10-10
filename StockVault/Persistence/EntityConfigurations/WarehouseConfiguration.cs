@@ -26,6 +26,9 @@ public class WarehouseConfiguration : IEntityTypeConfiguration<Warehouse>
 
         builder.HasIndex(indexExpression: w => w.Name, name: "UK_Warehouses_Name").IsUnique();
 
+        builder.HasMany(w => w.ProductStocks);
+        builder.HasMany(w => w.Shipments);
+
         builder.HasQueryFilter(w => !w.DeletedDate.HasValue);
     }
 }

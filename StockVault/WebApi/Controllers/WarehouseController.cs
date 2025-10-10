@@ -3,6 +3,7 @@ using Application.Features.Warehouses.Commands.Delete;
 using Application.Features.Warehouses.Commands.Update;
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Features.Warehouses.Queries.GetList;
+using Application.Features.Warehouses.Queries.GetListProduct;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -48,6 +49,14 @@ namespace WebApi.Controllers
         {
             GetListWarehouseQuery getListWarehouseQuery = new() { PageRequest = pageRequest };
             GetListResponse<GetListWarehouseListItemDto> response = await Mediator.Send(getListWarehouseQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("product/{id}")]
+        public async Task<IActionResult> GetListProduct([FromQuery] PageRequest pageRequest, [FromRoute] int id)
+        {
+            GetListProductByWarehouseIdQuery getListProductByWarehouseIdQuery = new() { PageRequest = pageRequest, Id = id };
+            GetListResponse<GetListProductByWarehouseIdListItemDto> response = await Mediator.Send(getListProductByWarehouseIdQuery);
             return Ok(response);
         }
     }

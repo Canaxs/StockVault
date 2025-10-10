@@ -2,7 +2,10 @@
 using Application.Features.Products.Commands.Delete;
 using Application.Features.Products.Commands.Update;
 using Application.Features.Products.Queries.GetById;
+using Application.Features.Products.Queries.GetList;
 using AutoMapper;
+using Core.Application.Responses;
+using Core.Persistence.Paging;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -24,5 +27,9 @@ public class MappingProfiles : Profile
         CreateMap<Product, UpdatedProductResponse>().ReverseMap();
 
         CreateMap<Product, GetByIdProductResponse>().ReverseMap();
+
+        CreateMap<Product, GetListProductListItemDto>().ReverseMap();
+
+        CreateMap<Paginate<Product>, GetListResponse<GetListProductListItemDto>>().ReverseMap();
     }
 }

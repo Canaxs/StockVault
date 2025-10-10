@@ -12,8 +12,8 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20251009144857_FirstStockVault")]
-    partial class FirstStockVault
+    [Migration("20251010105130_FirstStockVaultMigration")]
+    partial class FirstStockVaultMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -281,7 +281,7 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany()
+                        .WithMany("ProductStocks")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -300,13 +300,13 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("Shipments")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany()
+                        .WithMany("Shipments")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -326,6 +326,15 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("ProductStocks");
+
+                    b.Navigation("Shipments");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Warehouse", b =>
+                {
+                    b.Navigation("ProductStocks");
+
+                    b.Navigation("Shipments");
                 });
 #pragma warning restore 612, 618
         }

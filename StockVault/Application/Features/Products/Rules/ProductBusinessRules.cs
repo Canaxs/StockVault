@@ -13,10 +13,12 @@ namespace Application.Features.Products.Rules;
 public class ProductBusinessRules:BaseBusinessRules
 {
     private readonly IProductRepository _productRepository;
+    private readonly IProductStockRepository _productStockRepository;
 
-    public ProductBusinessRules(IProductRepository productRepository)
+    public ProductBusinessRules(IProductRepository productRepository, IProductStockRepository productStockRepository)
     {
         _productRepository = productRepository;
+        _productStockRepository = productStockRepository;
     }
 
     public async Task ProductNameCannotBeDuplicatedWhenInserted(string name)
@@ -33,6 +35,19 @@ public class ProductBusinessRules:BaseBusinessRules
         bool result = await _productRepository.AnyAsync(predicate: p => p.Id == id);
 
         if (!result)
-            throw new Exception(ProductsMessages.ProductNameExists);
+            throw new Exception(ProductsMessages.ProductNotFoundOrAlreadyDeleted);
+    }
+
+    public async Task CheckIfProductHasStockBeforeDeletionAsync(int id)
+    {
+        var productStocks = await _productStockRepository.GetListProjectedAsync(
+            predicate: ps => ps.ProductId == id,
+            selector: ps => ps.Quantity
+            );
+
+        int totalQuantity = productStocks.Items.Sum();
+
+        if (totalQuantity > 0)
+            throw new Exception(ProductsMessages.ProductHasStockCannotBeDeleted);
     }
 }

@@ -10,4 +10,5 @@ public class WarehousesMessages
 {
     public const string WarehouseNameExists = "Warehouse name exists";
     public const string WarehouseNotFoundOrAlreadyDeleted = "Warehouse not found or already deleted.";
+    public const string MaxCapacityCannotBeLessThanCurrentCapacity = "Max capacity cannot be less than current capacity.";
 }

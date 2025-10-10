@@ -12,13 +12,7 @@
     <Folder Include="Features\Customers\Profiles\" />
     <Folder Include="Features\Customers\Queries\" />
     <Folder Include="Features\Customers\Rules\" />
-    <Folder Include="Features\Products\Queries\GetList\" />
     <Folder Include="Features\Users\" />
-    <Folder Include="Features\ProductStocks\Commands\" />
-    <Folder Include="Features\ProductStocks\Constants\" />
-    <Folder Include="Features\ProductStocks\Profiles\" />
-    <Folder Include="Features\ProductStocks\Queries\" />
-    <Folder Include="Features\ProductStocks\Rules\" />
     <Folder Include="Features\Shipments\Commands\" />
     <Folder Include="Features\Shipments\Constants\" />
     <Folder Include="Features\Shipments\Profiles\" />

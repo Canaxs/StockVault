@@ -14,6 +14,9 @@ public class Warehouse:Entity<int>
     public int MaxCapacity { get; set; }
     public int CurrentCapacity { get; set; }
 
+    public virtual ICollection<ProductStock> ProductStocks { get; set; }
+    public virtual ICollection<Shipment> Shipments { get; set; }
+
     public Warehouse()
     {
         

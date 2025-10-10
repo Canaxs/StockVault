@@ -10,4 +10,5 @@ public class ProductsMessages
 {
     public const string ProductNameExists = "Product name exists";
     public const string ProductNotFoundOrAlreadyDeleted = "Product not found or already deleted.";
+    public const string ProductHasStockCannotBeDeleted = "This product cannot be deleted as it still has stock.";
 }

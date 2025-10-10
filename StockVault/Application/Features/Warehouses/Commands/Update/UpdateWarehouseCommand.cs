@@ -47,7 +47,11 @@ public class UpdateWarehouseCommand : IRequest<UpdatedWarehouseResponse>
                 warehouse.Location = request.Location;
 
             if (request.MaxCapacity.HasValue && warehouse?.MaxCapacity != request.MaxCapacity)
+            {
+                _warehouseBusinessRules.CheckIfMaxCapacityIsValid(request.MaxCapacity.Value, warehouse);
                 warehouse.MaxCapacity = request.MaxCapacity.Value;
+            }
+                
 
             await _warehouseRepository.UpdateAsync(warehouse);
 

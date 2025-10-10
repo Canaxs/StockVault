@@ -13,3 +13,4 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Domain\obj\Debug\net8.0\Do
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Domain\obj\Debug\net8.0\Domain.sourcelink.json

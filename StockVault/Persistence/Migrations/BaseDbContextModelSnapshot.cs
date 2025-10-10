@@ -278,7 +278,7 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany()
+                        .WithMany("ProductStocks")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -297,13 +297,13 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("Shipments")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany()
+                        .WithMany("Shipments")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -323,6 +323,15 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("ProductStocks");
+
+                    b.Navigation("Shipments");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Warehouse", b =>
+                {
+                    b.Navigation("ProductStocks");
+
+                    b.Navigation("Shipments");
                 });
 #pragma warning restore 612, 618
         }

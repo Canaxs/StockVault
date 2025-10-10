@@ -14,6 +14,7 @@ public class Product : Entity<int>
     public double Price { get; set; }
 
     public virtual ICollection<ProductStock> ProductStocks { get; set;}
+    public virtual ICollection<Shipment> Shipments { get; set; }
 
     public Product()
     {

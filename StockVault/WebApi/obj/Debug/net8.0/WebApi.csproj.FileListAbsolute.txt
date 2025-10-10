@@ -184,3 +184,4 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Co
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\obj\Debug\net8.0\WebApi.sourcelink.json

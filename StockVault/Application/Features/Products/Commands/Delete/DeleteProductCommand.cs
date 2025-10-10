@@ -33,6 +33,7 @@ public class DeleteProductCommand:IRequest<DeletedProductResponse>
         public async Task<DeletedProductResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
             await _productBusinessRules.ProductShouldExistWhenRequested(request.Id);
+            await _productBusinessRules.CheckIfProductHasStockBeforeDeletionAsync(request.Id);
 
             Product? product = await _productRepository.GetAsync(predicate: p => p.Id == request.Id, cancellationToken: cancellationToken);
 

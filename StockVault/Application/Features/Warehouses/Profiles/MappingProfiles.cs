@@ -3,6 +3,7 @@ using Application.Features.Warehouses.Commands.Delete;
 using Application.Features.Warehouses.Commands.Update;
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Features.Warehouses.Queries.GetList;
+using Application.Features.Warehouses.Queries.GetListProduct;
 using AutoMapper;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -30,5 +31,17 @@ public class MappingProfiles:Profile
 
         CreateMap<Warehouse, GetListWarehouseListItemDto>().ReverseMap();
         CreateMap<Paginate<Warehouse>, GetListResponse<GetListWarehouseListItemDto>>().ReverseMap();
+
+        CreateMap<ProductStock, GetListProductByWarehouseIdListItemDto>()
+            .ForMember(destinationMember: c => c.ProductId, memberOptions: opt => opt.MapFrom(c => c.Product.Id))
+            .ForMember(destinationMember: c => c.ProductName, memberOptions: opt => opt.MapFrom(c => c.Product.Name))
+            .ForMember(destinationMember: c => c.ProductDescription, memberOptions: opt => opt.MapFrom(c => c.Product.Description))
+            .ForMember(destinationMember: c => c.ProductPrice, memberOptions: opt => opt.MapFrom(c => c.Product.Price))
+            .ReverseMap();
+
+        CreateMap<Paginate<ProductStock>, GetListResponse<GetListProductByWarehouseIdListItemDto>>().ReverseMap();
+
+        //CreateMap<Paginate<GetListProductByWarehouseIdListItemDto>, GetListResponse<GetListProductByWarehouseIdListItemDto>>().ReverseMap();
+
     }
 }

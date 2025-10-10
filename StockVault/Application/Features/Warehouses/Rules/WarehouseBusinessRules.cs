@@ -35,4 +35,10 @@ public class WarehouseBusinessRules:BaseBusinessRules
         if (!result)
             throw new Exception(WarehousesMessages.WarehouseNotFoundOrAlreadyDeleted);
     }
+
+    public void CheckIfMaxCapacityIsValid(int newMaxCapacity , Warehouse warehouse)
+    {
+        if (newMaxCapacity < warehouse.CurrentCapacity)
+            throw new Exception(WarehousesMessages.MaxCapacityCannotBeLessThanCurrentCapacity);
+    }
 }

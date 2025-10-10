@@ -26,6 +26,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.HasIndex(indexExpression: p => p.Name, name: "UK_Products_Name").IsUnique();
 
         builder.HasMany(p => p.ProductStocks);
+        builder.HasMany(p => p.Shipments);
 
         builder.HasQueryFilter(p => !p.DeletedDate.HasValue);
     }
