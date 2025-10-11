@@ -33,9 +33,10 @@ public class GetByIdProductStockQuery: IRequest<GetByIdProductStockResponse>
         {
             await _productStockBusinessRules.CheckIfProductStockIdExists(request.Id);
 
-            ProductStock productStock = await _productStockRepository.GetAsync(
+            ProductStock? productStock = await _productStockRepository.GetAsync(
                 predicate: ps => ps.Id == request.Id,
-                include: ps => ps.Include(ps=>ps.Product).Include(ps => ps.Warehouse)
+                include: ps => ps.Include(ps=>ps.Product).Include(ps => ps.Warehouse),
+                cancellationToken: cancellationToken
                 );
 
             return _mapper.Map<GetByIdProductStockResponse>(productStock);

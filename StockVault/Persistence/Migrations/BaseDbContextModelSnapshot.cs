@@ -158,7 +158,8 @@ namespace Persistence.Migrations
                     b.HasIndex("WarehouseId");
 
                     b.HasIndex("ProductId", "WarehouseId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[DeletedDate] IS NULL");
 
                     b.ToTable("ProductStocks", (string)null);
                 });

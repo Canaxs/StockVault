@@ -34,6 +34,7 @@ public interface IAsyncRepository<TEntity, TEntityId> : IQuery<TEntity> where TE
         Expression<Func<TEntity, bool>>? predicate = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
+        Func<IQueryable<TEntity>, IQueryable<TResult>>? groupBy = null,
         Expression<Func<TEntity, TResult>>? selector = null,
         int index = 0,
         int size = 10,

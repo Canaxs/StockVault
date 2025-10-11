@@ -18,6 +18,7 @@ public class Product : Entity<int>
 
     public Product()
     {
+        Shipments = new HashSet<Shipment>();
         ProductStocks = new HashSet<ProductStock>();
     }
 

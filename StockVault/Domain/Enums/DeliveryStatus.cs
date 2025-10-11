@@ -8,7 +8,7 @@ namespace Domain.Enums;
 
 public enum DeliveryStatus
 {
-    None,
     Pending,
-    Complete
+    Complete,
+    Failed
 }

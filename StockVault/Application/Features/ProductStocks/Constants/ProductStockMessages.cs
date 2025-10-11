@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductStocks.Constants;
 
-public class ProduckStockMessages
+public class ProductStockMessages
 {
     public const string ProductAlreadyInWarehouse = "This product is already available in this warehouse.";
     public const string ProductStockNotExist = "Product stock does not exist.";

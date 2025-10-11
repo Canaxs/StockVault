@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20251010105130_FirstStockVaultMigration")]
+    [Migration("20251011092531_FirstStockVaultMigration")]
     partial class FirstStockVaultMigration
     {
         /// <inheritdoc />
@@ -161,7 +161,8 @@ namespace Persistence.Migrations
                     b.HasIndex("WarehouseId");
 
                     b.HasIndex("ProductId", "WarehouseId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[DeletedDate] IS NULL");
 
                     b.ToTable("ProductStocks", (string)null);
                 });

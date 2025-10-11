@@ -33,7 +33,7 @@ public class GetByIdProductQuery:IRequest<GetByIdProductResponse>
         {
             await _productBusinessRules.ProductShouldExistWhenRequested(request.Id);
 
-            Product product = await _productRepository.GetAsync(predicate: p => p.Id == request.Id, cancellationToken: cancellationToken);
+            Product? product = await _productRepository.GetAsync(predicate: p => p.Id == request.Id, cancellationToken: cancellationToken);
 
             return _mapper.Map<GetByIdProductResponse>(product);
         }

@@ -20,3 +20,5 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\bin\Debug\net8
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\bin\Debug\net8.0\Infrastructure.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\obj\Debug\net8.0\Application.sourcelink.json
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.pdb

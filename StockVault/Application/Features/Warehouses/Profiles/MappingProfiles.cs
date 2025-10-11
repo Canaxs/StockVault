@@ -4,6 +4,8 @@ using Application.Features.Warehouses.Commands.Update;
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Features.Warehouses.Queries.GetList;
 using Application.Features.Warehouses.Queries.GetListProduct;
+using Application.Features.Warehouses.Queries.GetListShipment;
+using Application.Features.Warehouses.Queries.GetListShipmentSummary;
 using AutoMapper;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -42,6 +44,18 @@ public class MappingProfiles:Profile
         CreateMap<Paginate<ProductStock>, GetListResponse<GetListProductByWarehouseIdListItemDto>>().ReverseMap();
 
         //CreateMap<Paginate<GetListProductByWarehouseIdListItemDto>, GetListResponse<GetListProductByWarehouseIdListItemDto>>().ReverseMap();
+
+        CreateMap<Shipment, GetListShipmentByWarehouseIdListItemDto>()
+            .ForMember(destinationMember: c => c.ProductId, memberOptions: opt => opt.MapFrom(c => c.Product.Id))
+            .ForMember(destinationMember: c => c.ProductName, memberOptions: opt => opt.MapFrom(c => c.Product.Name))
+            .ForMember(destinationMember: c => c.WarehouseId, memberOptions: opt => opt.MapFrom(c => c.Warehouse.Id))
+            .ForMember(destinationMember: c => c.WarehouseName, memberOptions: opt => opt.MapFrom(c => c.Warehouse.Name))
+            .ForMember(destinationMember: c => c.CustomerName, memberOptions: opt => opt.MapFrom(c => c.Customer.Name))
+            .ReverseMap();
+
+        CreateMap<Paginate<Shipment>, GetListResponse<GetListShipmentByWarehouseIdListItemDto>>().ReverseMap();
+
+        CreateMap<Paginate<GetListShipmentSummaryByWarehouseIdListItemDto>, GetListResponse<GetListShipmentSummaryByWarehouseIdListItemDto>>().ReverseMap();
 
     }
 }

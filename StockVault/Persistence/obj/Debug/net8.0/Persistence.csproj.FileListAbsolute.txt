@@ -24,3 +24,5 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\bin\Debug\net8
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\bin\Debug\net8.0\Infrastructure.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\Persistence\bin\Debug\net8.0\Core.CrossCuttingConcerns.pdb

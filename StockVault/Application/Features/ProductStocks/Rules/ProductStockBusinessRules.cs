@@ -2,6 +2,7 @@
 using Application.Features.Warehouses.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
+using Core.CrossCuttingConcerns.Exceptions.Types;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ public class ProductStockBusinessRules:BaseBusinessRules
         bool result = await _productStockRepository.AnyAsync(ps => ps.WarehouseId == warehouseId && ps.ProductId == productId);
 
         if (result)
-            throw new Exception(ProduckStockMessages.ProductAlreadyInWarehouse);
+            throw new BusinessException(ProductStockMessages.ProductAlreadyInWarehouse);
     }
 
     public async Task CheckIfProductStockIdExists(int id)
@@ -35,7 +36,7 @@ public class ProductStockBusinessRules:BaseBusinessRules
         bool result = await _productStockRepository.AnyAsync(ps => ps.Id == id);
 
         if (!result)
-            throw new Exception(ProduckStockMessages.ProductStockNotExist);
+            throw new NotFoundException(ProductStockMessages.ProductStockNotExist);
     }
 
     public async Task CheckWarehouseHasEnoughCapacity(int warehouseId, int quantity)
@@ -43,6 +44,6 @@ public class ProductStockBusinessRules:BaseBusinessRules
         Warehouse warehouse = await _warehouseRepository.GetAsync(w => w.Id == warehouseId);
 
         if (warehouse.CurrentCapacity + quantity > warehouse.MaxCapacity)
-            throw new Exception(ProduckStockMessages.NotEnoughSpaceForStock);
+            throw new BusinessException(ProductStockMessages.NotEnoughSpaceForStock);
     }
 }

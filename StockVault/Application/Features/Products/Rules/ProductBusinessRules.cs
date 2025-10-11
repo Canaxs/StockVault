@@ -2,6 +2,7 @@
 using Application.Features.Warehouses.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
+using Core.CrossCuttingConcerns.Exceptions.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,28 +27,41 @@ public class ProductBusinessRules:BaseBusinessRules
         bool result = await _productRepository.AnyAsync(predicate: p => p.Name.ToLower() == name.ToLower());
 
         if (result)
-        {
-            throw new Exception(ProductsMessages.ProductNameExists);
-        }
+            throw new BusinessException(ProductsMessages.ProductNameExists);
     }
+
+    public async Task ProductNameCannotBeDuplicatedWhenUpdated(string name, int id)
+    {
+        bool result = await _productRepository.AnyAsync(predicate: p => p.Name.ToLower() == name.ToLower() && p.Id != id);
+
+        if (result)
+            throw new BusinessException(ProductsMessages.ProductNameExists);
+    }
+
     public async Task ProductShouldExistWhenRequested(int id)
     {
         bool result = await _productRepository.AnyAsync(predicate: p => p.Id == id);
 
         if (!result)
-            throw new Exception(ProductsMessages.ProductNotFoundOrAlreadyDeleted);
+            throw new NotFoundException(ProductsMessages.ProductNotFoundOrAlreadyDeleted);
     }
 
     public async Task CheckIfProductHasStockBeforeDeletionAsync(int id)
     {
-        var productStocks = await _productStockRepository.GetListProjectedAsync(
-            predicate: ps => ps.ProductId == id,
-            selector: ps => ps.Quantity
-            );
+        bool hasStock = await _productStockRepository.AnyAsync(
+            ps => ps.ProductId == id && ps.Quantity > 0
+        );
 
-        int totalQuantity = productStocks.Items.Sum();
+        if (hasStock)
+            throw new BusinessException(ProductsMessages.ProductHasStockCannotBeDeleted);
+    }
+    
+    public async Task CheckProductNameExists(string name)
+    {
+        bool result = await _productRepository.AnyAsync(predicate: p => p.Name.ToLower() == name.ToLower());
 
-        if (totalQuantity > 0)
-            throw new Exception(ProductsMessages.ProductHasStockCannotBeDeleted);
+        if (!result)
+            throw new NotFoundException(ProductsMessages.ProductNameNotFound);
+
     }
 }

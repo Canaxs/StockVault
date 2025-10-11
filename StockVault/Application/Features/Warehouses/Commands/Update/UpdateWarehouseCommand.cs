@@ -39,7 +39,7 @@ public class UpdateWarehouseCommand : IRequest<UpdatedWarehouseResponse>
 
             if (!string.IsNullOrWhiteSpace(request.Name) && !string.Equals(warehouse?.Name, request.Name, StringComparison.Ordinal))
             {
-                await _warehouseBusinessRules.WarehouseNameCannotBeDuplicatedWhenInserted(request.Name);
+                await _warehouseBusinessRules.WarehouseNameCannotBeDuplicatedWhenUpdated(request.Name,request.Id);
                 warehouse.Name = request.Name;
             }
 

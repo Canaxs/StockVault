@@ -30,7 +30,9 @@ public class GetByIdShipmentQuery : IRequest<GetByIdShipmentResponse>
 
         public async Task<GetByIdShipmentResponse> Handle(GetByIdShipmentQuery request, CancellationToken cancellationToken)
         {
-            Shipment? shipment = await _shipmentRepository.GetAsync(s => s.Id == request.Id);
+            await _shipmentBusinessRules.CheckIfShipmentIdExists(request.Id);
+
+            Shipment? shipment = await _shipmentRepository.GetAsync(s => s.Id == request.Id,cancellationToken: cancellationToken);
 
             return _mapper.Map<GetByIdShipmentResponse>(shipment);
         }

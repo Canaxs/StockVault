@@ -80,7 +80,7 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
         return await queryable.ToPaginateAsync(index, size, cancellationToken);
     }
 
-    public async Task<Paginate<TResult>> GetListProjectedAsync<TResult>(Expression<Func<TEntity, bool>>? predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Expression<Func<TEntity, TResult>>? selector = null, int index = 0, int size = 10, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
+    public async Task<Paginate<TResult>> GetListProjectedAsync<TResult>(Expression<Func<TEntity, bool>>? predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Func<IQueryable<TEntity>, IQueryable<TResult>>? groupBy = null, Expression<Func<TEntity, TResult>>? selector = null, int index = 0, int size = 10, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
     {
         IQueryable<TEntity> queryable = Query();
         if (!enableTracking)
@@ -93,10 +93,22 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
             queryable = queryable.Where(predicate);
         if (orderBy != null)
             queryable = orderBy(queryable);
-        if (selector == null)
-            throw new ArgumentNullException(nameof(selector));
 
-        return await queryable.Select(selector).ToPaginateAsync(index, size, cancellationToken);
+        IQueryable<TResult> finalQuery;
+
+        if (groupBy != null)
+        {
+            finalQuery = groupBy(queryable);
+        }
+        else
+        {
+            if (selector == null)
+                throw new ArgumentNullException(nameof(selector));
+
+            finalQuery = queryable.Select(selector);
+        }
+
+        return await finalQuery.ToPaginateAsync(index, size, cancellationToken);
     }
 
     public IQueryable<TEntity> Query()

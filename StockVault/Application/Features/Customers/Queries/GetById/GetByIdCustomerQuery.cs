@@ -32,7 +32,7 @@ public class GetByIdCustomerQuery:IRequest<GetByIdCustomerResponse>
         {
             await _customerBusinessRules.CheckIfCustomerIdExists(request.Id);
 
-            Customer customer = await _customerRepository.GetAsync(c => c.Id == request.Id);
+            Customer? customer = await _customerRepository.GetAsync(c => c.Id == request.Id, cancellationToken: cancellationToken);
 
             return _mapper.Map<GetByIdCustomerResponse>(customer);
         }

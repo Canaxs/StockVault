@@ -23,6 +23,9 @@
     <Reference Include="Core.Application">
       <HintPath>..\..\Core\Core.Application\bin\Debug\net8.0\Core.Application.dll</HintPath>
     </Reference>
+    <Reference Include="Core.CrossCuttingConcerns">
+      <HintPath>..\..\Core\Core.CrossCuttingConcerns\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

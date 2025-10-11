@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "9.0.9",
           "Persistence": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0",
-          "Core.Application": "1.0.0.0"
+          "Core.Application": "1.0.0.0",
+          "Core.CrossCuttingConcerns": "1.0.0.0"
         },
         "runtime": {
           "WebApi.dll": {}
@@ -1177,6 +1178,14 @@
           }
         }
       },
+      "Core.CrossCuttingConcerns/1.0.0.0": {
+        "runtime": {
+          "Core.CrossCuttingConcerns.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Core.Persistence/1.0.0.0": {
         "runtime": {
           "Core.Persistence.dll": {
@@ -1816,6 +1825,11 @@
       "sha512": ""
     },
     "Core.Application/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.CrossCuttingConcerns/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

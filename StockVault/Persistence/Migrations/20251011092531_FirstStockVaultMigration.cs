@@ -147,7 +147,8 @@ namespace Persistence.Migrations
                 name: "IX_ProductStocks_ProductId_WarehouseId",
                 table: "ProductStocks",
                 columns: new[] { "ProductId", "WarehouseId" },
-                unique: true);
+                unique: true,
+                filter: "[DeletedDate] IS NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductStocks_WarehouseId",

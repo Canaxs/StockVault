@@ -1,6 +1,7 @@
 ﻿using Application.Features.Customers.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
+using Core.CrossCuttingConcerns.Exceptions.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,6 @@ public class CustomerBusinessRules:BaseBusinessRules
         bool result = await _customerRepository.AnyAsync(c=> c.Id == id);
 
         if (!result)
-            throw new Exception(CustomerMessages.CustomerNotFoundOrAlreadyDeleted);
+            throw new NotFoundException(CustomerMessages.CustomerNotFoundOrAlreadyDeleted);
     }
 }

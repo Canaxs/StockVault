@@ -3,19 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\paging\\iqueryablepaginateextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:paging\\iqueryablepaginateextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{451ACAD5-6918-48F3-95E6-2EEFCFDB901C}|..\\Core.Application\\Core.Application.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.application\\requests\\pagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,56 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EfRepositoryBase.cs",
               "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
               "RelativeDocumentMoniker": "Repositories\\EfRepositoryBase.cs",
               "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
               "RelativeToolTip": "Repositories\\EfRepositoryBase.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAkwDcAAAAFAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAwwGwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T10:30:14.366Z",
+              "WhenOpened": "2025-10-11T13:34:54.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IQueryablePaginateExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Paging\\IQueryablePaginateExtensions.cs",
-              "RelativeDocumentMoniker": "Paging\\IQueryablePaginateExtensions.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Paging\\IQueryablePaginateExtensions.cs",
-              "RelativeToolTip": "Paging\\IQueryablePaginateExtensions.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T10:20:29.167Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "IAsyncRepository.cs",
               "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\IAsyncRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IAsyncRepository.cs",
               "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\IAsyncRepository.cs",
               "RelativeToolTip": "Repositories\\IAsyncRepository.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBoAAAAWAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCUAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T07:06:27.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PageRequest.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Requests\\PageRequest.cs",
-              "RelativeDocumentMoniker": "..\\Core.Application\\Requests\\PageRequest.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Requests\\PageRequest.cs",
-              "RelativeToolTip": "..\\Core.Application\\Requests\\PageRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T19:38:07.821Z"
+              "WhenOpened": "2025-10-11T13:27:56.854Z",
+              "EditorCaption": ""
             }
           ]
         }

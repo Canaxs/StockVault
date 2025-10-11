@@ -9,3 +9,5 @@ C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\De
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\Debug\net8.0\refint\Core.CrossCuttingConcerns.dll
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\Debug\net8.0\Core.CrossCuttingConcerns.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\Debug\net8.0\ref\Core.CrossCuttingConcerns.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\Debug\net8.0\Core.CrossCuttingConcerns.csproj.AssemblyReference.cache
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.CrossCuttingConcerns\obj\Debug\net8.0\Core.CrossCuttingConcerns.sourcelink.json

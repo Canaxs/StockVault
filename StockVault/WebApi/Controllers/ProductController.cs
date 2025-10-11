@@ -3,11 +3,15 @@ using Application.Features.Products.Commands.Delete;
 using Application.Features.Products.Commands.Update;
 using Application.Features.Products.Queries.GetById;
 using Application.Features.Products.Queries.GetList;
+using Application.Features.Products.Queries.GetListCustomer;
+using Application.Features.Products.Queries.GetListShipment;
+using Application.Features.Products.Queries.GetListWarehouse;
 using Application.Features.Warehouses.Commands.Create;
 using Application.Features.Warehouses.Commands.Delete;
 using Application.Features.Warehouses.Commands.Update;
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Features.Warehouses.Queries.GetList;
+using Application.Features.Warehouses.Queries.GetListShipment;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +56,34 @@ namespace WebApi.Controllers
         {
             GetListProductQuery getListProductQuery = new() { PageRequest = pageRequest };
             GetListResponse<GetListProductListItemDto> response = await Mediator.Send(getListProductQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Warehouse")]
+        public async Task<IActionResult> GetListWarehouse([FromQuery] PageRequest pageRequest,[FromRoute] int id)
+        {
+            GetListWarehouseByProductIdQuery getListWarehouseByProductIdQuery = new() { PageRequest = pageRequest, Id = id };
+            GetListResponse<GetListWarehouseByProductIdListItemDto> response = await Mediator.Send(getListWarehouseByProductIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Shipments")]
+        public async Task<IActionResult> GetListShipment([FromRoute] int id, [FromQuery] PageRequest pageRequest,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListShipmentByProductIdQuery getListShipmentByProductIdQuery = new() { PageRequest = pageRequest, Id = id, StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListShipmentByProductIdListItemDto> response = await Mediator.Send(getListShipmentByProductIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Customers")]
+        public async Task<IActionResult> GetListCustomers([FromRoute] int id, [FromQuery] PageRequest pageRequest,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListCustomerByProductIdQuery getListCustomerByProductIdQuery = new() { PageRequest = pageRequest, Id = id, StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListCustomerByProductIdListItemDto> response = await Mediator.Send(getListCustomerByProductIdQuery);
             return Ok(response);
         }
     }

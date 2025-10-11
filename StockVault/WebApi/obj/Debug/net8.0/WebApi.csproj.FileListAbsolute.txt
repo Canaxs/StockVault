@@ -185,3 +185,5 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Mi
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Infrastructure.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\obj\Debug\net8.0\WebApi.sourcelink.json
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Core.CrossCuttingConcerns.pdb

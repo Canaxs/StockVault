@@ -4,6 +4,8 @@ using Application.Features.Warehouses.Commands.Update;
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Features.Warehouses.Queries.GetList;
 using Application.Features.Warehouses.Queries.GetListProduct;
+using Application.Features.Warehouses.Queries.GetListShipment;
+using Application.Features.Warehouses.Queries.GetListShipmentSummary;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -51,11 +53,31 @@ namespace WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpGet("product/{id}")]
+        [HttpGet("{id}/Products")]
         public async Task<IActionResult> GetListProduct([FromQuery] PageRequest pageRequest, [FromRoute] int id)
         {
             GetListProductByWarehouseIdQuery getListProductByWarehouseIdQuery = new() { PageRequest = pageRequest, Id = id };
             GetListResponse<GetListProductByWarehouseIdListItemDto> response = await Mediator.Send(getListProductByWarehouseIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Shipments")]
+        public async Task<IActionResult> GetListShipment([FromRoute] int id, [FromQuery] PageRequest pageRequest, 
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListShipmentByWarehouseIdQuery getListShipmentByWarehouseIdQuery = new() { PageRequest = pageRequest, Id = id , StartDate = startDate, EndDate = endDate};
+            GetListResponse<GetListShipmentByWarehouseIdListItemDto> response = await Mediator.Send(getListShipmentByWarehouseIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/ShipmentSummary")]
+        public async Task<IActionResult> GetListShipmentSummary([FromRoute] int id, [FromQuery] PageRequest pageRequest,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListShipmentSummaryByWarehouseIdQuery getListShipmentSummaryByWarehouseIdQuery = new() { PageRequest = pageRequest, Id = id, StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListShipmentSummaryByWarehouseIdListItemDto> response = await Mediator.Send(getListShipmentSummaryByWarehouseIdQuery);
             return Ok(response);
         }
     }

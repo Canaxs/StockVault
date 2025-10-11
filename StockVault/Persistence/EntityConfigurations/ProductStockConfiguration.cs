@@ -19,7 +19,7 @@ public class ProductStockConfiguration : IEntityTypeConfiguration<ProductStock>
         builder.Property(ps => ps.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(ps => ps.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(ps => new { ps.ProductId, ps.WarehouseId }).IsUnique();
+        builder.HasIndex(ps => new { ps.ProductId, ps.WarehouseId }).IsUnique().HasFilter("[DeletedDate] IS NULL");
 
         builder.HasOne(ps => ps.Product);
         builder.HasOne(ps => ps.Warehouse);

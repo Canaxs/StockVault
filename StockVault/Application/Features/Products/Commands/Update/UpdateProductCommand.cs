@@ -36,13 +36,12 @@ public class UpdateProductCommand:IRequest<UpdatedProductResponse>
         public async Task<UpdatedProductResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             await _productBusinessRules.ProductShouldExistWhenRequested(request.Id);
-            await _productBusinessRules.ProductNameCannotBeDuplicatedWhenInserted(request.Name);
 
             Product product = await _productRepository.GetAsync(w => w.Id == request.Id, cancellationToken: cancellationToken);
 
             if (!string.IsNullOrWhiteSpace(request.Name) && !string.Equals(product?.Name, request.Name, StringComparison.Ordinal))
             {
-                await _productBusinessRules.ProductNameCannotBeDuplicatedWhenInserted(request.Name);
+                await _productBusinessRules.ProductNameCannotBeDuplicatedWhenUpdated(request.Name,request.Id);
                 product.Name = request.Name;
             }
 

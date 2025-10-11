@@ -31,6 +31,7 @@ public class DeleteWarehouseCommand : IRequest<DeletedWarehouseResponse>
         public async Task<DeletedWarehouseResponse> Handle(DeleteWarehouseCommand request, CancellationToken cancellationToken)
         {
             await _warehouseBusinessRules.WarehouseShouldExistWhenRequested(request.Id);
+            await _warehouseBusinessRules.CheckIfWarehouseHasNoStockBeforeDeletion(request.Id);
 
             Warehouse? warehouse = await _warehouseRepository.GetAsync(predicate: w => w.Id == request.Id, cancellationToken: cancellationToken);
 
