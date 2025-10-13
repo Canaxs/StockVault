@@ -16,6 +16,7 @@ using Core.Security.JWT;
 using Core.CrossCuttingConcerns.Serilog;
 using Core.CrossCuttingConcerns.Serilog.Logger;
 using Core.Application.Pipelines.Logging;
+using Core.Application.Pipelines.Authorization;
 
 namespace Application;
 
@@ -39,6 +40,7 @@ public static class ApplicationServiceRegistration
             configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 
             configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
+            configuration.AddOpenBehavior(typeof(AuthorizationBehavior<,>));
             configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
             configuration.AddOpenBehavior(typeof(CachingBehavior<,>));
             configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));

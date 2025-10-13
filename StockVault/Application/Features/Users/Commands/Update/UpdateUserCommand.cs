@@ -1,6 +1,7 @@
 ﻿using Application.Features.Users.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Authorization;
 using Core.Security.Entities;
 using Domain.Entities;
 using MediatR;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Users.Commands.Update;
 
-public class UpdateUserCommand:IRequest<UpdatedUserResponse>
+public class UpdateUserCommand:IRequest<UpdatedUserResponse>, ISecuredRequest
 {
     public int Id { get; set; }
     public int OperationClaimId { get; set; }

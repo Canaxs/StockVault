@@ -1,6 +1,7 @@
 ﻿using Application.Features.Users.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Authorization;
 using Core.Security.Entities;
 using Core.Security.Enums;
 using Core.Security.Hashing;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Users.Command.Create;
 
-public class CreateUserCommand : IRequest<CreatedUserResponse>
+public class CreateUserCommand : IRequest<CreatedUserResponse>, ISecuredRequest
 {
     public string Username { get; set; }
     public string Password { get; set; }

@@ -1,12 +1,14 @@
 ﻿using Application.Features.Users.Command.Create;
 using Application.Features.Users.Commands.Delete;
 using Application.Features.Users.Commands.Update;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : BaseController
     {
 
