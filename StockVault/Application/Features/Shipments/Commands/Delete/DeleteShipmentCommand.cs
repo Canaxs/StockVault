@@ -1,6 +1,7 @@
 ﻿using Application.Features.Shipments.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Shipments.Commands.Delete;
 
-public class DeleteShipmentCommand:IRequest<DeletedShipmentResponse>
+public class DeleteShipmentCommand:IRequest<DeletedShipmentResponse>, ILoggableRequest
 {
     public int Id { get; set; }
 

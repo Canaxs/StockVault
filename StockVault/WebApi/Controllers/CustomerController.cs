@@ -7,12 +7,14 @@ using Application.Features.Customers.Queries.GetListProduct;
 using Application.Features.Customers.Queries.GetListShipment;
 using Core.Application.Requests;
 using Core.Application.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CustomerController : BaseController
     {
 

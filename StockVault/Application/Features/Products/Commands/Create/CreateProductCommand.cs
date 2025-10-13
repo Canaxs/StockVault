@@ -3,6 +3,7 @@ using Application.Features.Warehouses.Commands.Create;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Commands.Create;
 
-public class CreateProductCommand: IRequest<CreatedProductResponse>,ICacheRemoverRequest
+public class CreateProductCommand: IRequest<CreatedProductResponse>,ICacheRemoverRequest, ILoggableRequest
 {
     public string Name { get; set; }
     public string? Description { get; set; }

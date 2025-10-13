@@ -4,6 +4,7 @@ using Application.Features.Warehouses.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Commands.Create;
 
-public class CreateCustomerCommand:IRequest<CreatedCustomerResponse>,ICacheRemoverRequest
+public class CreateCustomerCommand:IRequest<CreatedCustomerResponse>,ICacheRemoverRequest, ILoggableRequest
 {
     public string Name { get; set; }
     public string? CompanyName { get; set; }

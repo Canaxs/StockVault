@@ -1,6 +1,7 @@
 ﻿using Application.Features.Warehouses.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Warehouses.Commands.Delete;
 
-public class DeleteWarehouseCommand : IRequest<DeletedWarehouseResponse>
+public class DeleteWarehouseCommand : IRequest<DeletedWarehouseResponse>, ILoggableRequest
 {
     public int Id { get; set; }
 

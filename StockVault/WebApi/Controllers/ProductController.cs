@@ -11,12 +11,14 @@ using Application.Features.Products.Queries.GetListTopSellingProduct;
 using Application.Features.Products.Queries.GetListWarehouse;
 using Core.Application.Requests;
 using Core.Application.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : BaseController
     {
         [HttpPost]

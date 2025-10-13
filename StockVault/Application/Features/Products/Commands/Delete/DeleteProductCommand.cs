@@ -4,6 +4,7 @@ using Application.Features.Warehouses.Commands.Delete;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Commands.Delete;
 
-public class DeleteProductCommand:IRequest<DeletedProductResponse>,ICacheRemoverRequest
+public class DeleteProductCommand:IRequest<DeletedProductResponse>,ICacheRemoverRequest, ILoggableRequest
 {
     public int Id { get; set; }
 

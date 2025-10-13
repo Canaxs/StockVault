@@ -1,6 +1,7 @@
 ﻿using Application.Features.Shipments.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using MediatR;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Shipments.Commands.Create;
 
-public class CreateShipmentCommand:IRequest<CreatedShipmentResponse>, ITransactionalRequest
+public class CreateShipmentCommand:IRequest<CreatedShipmentResponse>, ITransactionalRequest, ILoggableRequest
 {
     public int ProductId { get; set; }
     public int WarehouseId { get; set; }

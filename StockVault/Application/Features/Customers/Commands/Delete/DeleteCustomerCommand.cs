@@ -3,6 +3,7 @@ using Application.Features.Customers.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Commands.Delete;
 
-public class DeleteCustomerCommand:IRequest<DeletedCustomerResponse>,ICacheRemoverRequest
+public class DeleteCustomerCommand:IRequest<DeletedCustomerResponse>,ICacheRemoverRequest, ILoggableRequest
 {
     public int Id { get; set; }
     public string? CacheKey => "";

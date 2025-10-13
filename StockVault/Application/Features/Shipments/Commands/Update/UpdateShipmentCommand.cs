@@ -1,6 +1,7 @@
 ﻿using Application.Features.Shipments.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using Domain.Enums;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Shipments.Commands.Update;
 
-public class UpdateShipmentCommand:IRequest<UpdatedShipmentResponse>, ITransactionalRequest
+public class UpdateShipmentCommand:IRequest<UpdatedShipmentResponse>, ITransactionalRequest, ILoggableRequest
 {
     public int Id { get; set; }
     public DeliveryStatus DeliveryStatus { get; set; }

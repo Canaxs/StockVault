@@ -2,6 +2,7 @@
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Commands.Update;
 
-public class UpdateCustomerCommand : IRequest<UpdatedCustomerResponse>,ICacheRemoverRequest
+public class UpdateCustomerCommand : IRequest<UpdatedCustomerResponse>,ICacheRemoverRequest, ILoggableRequest
 {
     public int Id { get; set; }
     public string? Name { get; set; }

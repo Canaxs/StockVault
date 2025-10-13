@@ -2,6 +2,7 @@
 using Application.Features.Warehouses.Commands.Delete;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using MediatR;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductStocks.Commands.Delete;
 
-public class DeleteProductStockCommand: IRequest<DeletedProductStockResponse>, ITransactionalRequest
+public class DeleteProductStockCommand: IRequest<DeletedProductStockResponse>, ITransactionalRequest, ILoggableRequest
 {
     public int Id { get; set; }
 

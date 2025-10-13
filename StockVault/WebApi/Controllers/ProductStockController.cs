@@ -6,12 +6,14 @@ using Application.Features.ProductStocks.Queries.GetList;
 using Application.Features.ProductStocks.Queries.GetProductStockByProductAndWarehouse;
 using Core.Application.Requests;
 using Core.Application.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductStockController : BaseController
     {
         [HttpPost]
