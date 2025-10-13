@@ -17,8 +17,8 @@ namespace Application.Features.Warehouses.Queries.GetListShipmentSummary;
 
 public class GetListShipmentSummaryByWarehouseIdQuery:IRequest<GetListResponse<GetListShipmentSummaryByWarehouseIdListItemDto>>
 {
+    public int Id { get; set; }
     public PageRequest PageRequest { get; set; }
-    public int Id {  get; set; }
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set; }
 
@@ -53,7 +53,8 @@ public class GetListShipmentSummaryByWarehouseIdQuery:IRequest<GetListResponse<G
                     ProductName = g.First().Product.Name,
                     ProductDescription = g.First().Product.Description,
                     ProductPrice = g.First().Product.Price,
-                    TotalQuantity = g.Sum(x => x.Quantity)
+                    TotalQuantity = g.Sum(x => x.Quantity),
+                    TotalPrice = g.Sum(x => x.Quantity * x.Product.Price)
                 }),
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,

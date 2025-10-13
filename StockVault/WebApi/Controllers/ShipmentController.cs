@@ -1,13 +1,8 @@
-﻿using Application.Features.Customers.Commands.Delete;
-using Application.Features.Customers.Commands.Update;
-using Application.Features.Products.Commands.Create;
-using Application.Features.Products.Queries.GetById;
-using Application.Features.Shipments.Commands.Create;
+﻿using Application.Features.Shipments.Commands.Create;
 using Application.Features.Shipments.Commands.Delete;
 using Application.Features.Shipments.Commands.Update;
 using Application.Features.Shipments.Queries.GetById;
 using Application.Features.Shipments.Queries.GetList;
-using Application.Features.Warehouses.Queries.GetList;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;

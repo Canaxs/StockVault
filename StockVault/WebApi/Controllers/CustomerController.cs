@@ -3,11 +3,8 @@ using Application.Features.Customers.Commands.Delete;
 using Application.Features.Customers.Commands.Update;
 using Application.Features.Customers.Queries.GetById;
 using Application.Features.Customers.Queries.GetList;
-using Application.Features.Warehouses.Commands.Create;
-using Application.Features.Warehouses.Commands.Delete;
-using Application.Features.Warehouses.Commands.Update;
-using Application.Features.Warehouses.Queries.GetById;
-using Application.Features.Warehouses.Queries.GetList;
+using Application.Features.Customers.Queries.GetListProduct;
+using Application.Features.Customers.Queries.GetListShipment;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +50,26 @@ namespace WebApi.Controllers
         {
             GetListCustomerQuery getListCustomerQuery = new() { PageRequest = pageRequest };
             GetListResponse<GetListCustomerListItemDto> response = await Mediator.Send(getListCustomerQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Shipments")]
+        public async Task<IActionResult> GetListShipment([FromRoute] int id, [FromQuery] PageRequest pageRequest,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListShipmentByCustomerIdQuery getListShipmentByCustomerIdQuery = new() { Id = id,PageRequest = pageRequest,StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListShipmentByCustomerIdListItemDto> response = await Mediator.Send(getListShipmentByCustomerIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}/Products")]
+        public async Task<IActionResult> GetListProduct([FromRoute] int id, [FromQuery] PageRequest pageRequest,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetListProductByCustomerIdQuery getListProductByCustomerIdQuery = new() { Id = id, PageRequest = pageRequest, StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListProductByCustomerIdListItemDto> response = await Mediator.Send(getListProductByCustomerIdQuery);
             return Ok(response);
         }
     }

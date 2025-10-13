@@ -3,6 +3,7 @@ using Application.Features.Warehouses.Commands.Create;
 using Application.Features.Warehouses.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -13,13 +14,18 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Commands.Create;
 
-public class CreateCustomerCommand:IRequest<CreatedCustomerResponse>
+public class CreateCustomerCommand:IRequest<CreatedCustomerResponse>,ICacheRemoverRequest
 {
     public string Name { get; set; }
     public string? CompanyName { get; set; }
     public string Address { get; set; }
     public string City { get; set; }
     public string PhoneNumber { get; set; }
+    public string? CacheKey => "";
+
+    public bool BypassCache => false;
+
+    public string? CacheGroupKey => "GetCustomers";
 
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, CreatedCustomerResponse>
     {

@@ -6,6 +6,7 @@ using Application.Features.Products.Queries.GetByName;
 using Application.Features.Products.Queries.GetList;
 using Application.Features.Products.Queries.GetListCustomer;
 using Application.Features.Products.Queries.GetListShipment;
+using Application.Features.Products.Queries.GetListTopSellingProduct;
 using Application.Features.Products.Queries.GetListWarehouse;
 using AutoMapper;
 using Core.Application.Responses;
@@ -57,6 +58,8 @@ public class MappingProfiles : Profile
         CreateMap<Paginate<Shipment>, GetListResponse<GetListShipmentByProductIdListItemDto>>().ReverseMap();
 
         CreateMap<Paginate<GetListCustomerByProductIdListItemDto>, GetListResponse<GetListCustomerByProductIdListItemDto>>().ReverseMap();
+
+        CreateMap<Paginate<GetListTopSellingProductListItemDto>, GetListResponse<GetListTopSellingProductListItemDto>>().ReverseMap();
 
     }
 }

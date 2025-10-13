@@ -11,7 +11,6 @@ public class UpdateCustomerCommandValidator : AbstractValidator<UpdateCustomerCo
 {
     public UpdateCustomerCommandValidator()
     {
-        RuleFor(c => c.Name).NotEmpty().Length(3, 100);
         RuleFor(c => c.PhoneNumber).Length(13).Unless(c => string.IsNullOrEmpty(c.PhoneNumber));
     }
 }

@@ -5,6 +5,7 @@ using Application.Features.ProductStocks.Commands.Delete;
 using Application.Features.ProductStocks.Commands.Update;
 using Application.Features.ProductStocks.Queries.GetById;
 using Application.Features.ProductStocks.Queries.GetList;
+using Application.Features.ProductStocks.Queries.GetProductStockByProductAndWarehouse;
 using AutoMapper;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -37,6 +38,11 @@ public class MappingProfiles:Profile
         CreateMap<ProductStock, UpdatedProductStockResponse>().ReverseMap();
 
         CreateMap<ProductStock, GetByIdProductStockResponse>()
+            .ForMember(destinationMember: c => c.ProductName, memberOptions: opt => opt.MapFrom(c => c.Product.Name))
+            .ForMember(destinationMember: c => c.WarehouseName, memberOptions: opt => opt.MapFrom(c => c.Warehouse.Name))
+            .ReverseMap();
+
+        CreateMap<ProductStock, GetProductStockByProductIdAndWarehouseIdResponse>()
             .ForMember(destinationMember: c => c.ProductName, memberOptions: opt => opt.MapFrom(c => c.Product.Name))
             .ForMember(destinationMember: c => c.WarehouseName, memberOptions: opt => opt.MapFrom(c => c.Warehouse.Name))
             .ReverseMap();

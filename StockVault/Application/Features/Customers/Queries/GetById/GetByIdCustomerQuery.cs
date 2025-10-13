@@ -1,6 +1,7 @@
 ﻿using Application.Features.Customers.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,9 +12,16 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Queries.GetById;
 
-public class GetByIdCustomerQuery:IRequest<GetByIdCustomerResponse>
+public class GetByIdCustomerQuery:IRequest<GetByIdCustomerResponse>, ICacheableRequest
 {
     public int Id { get; set; }
+    public string CacheKey => $"GetByCustomerId-{Id}";
+
+    public bool BypassCache { get; }
+
+    public string? CacheGroupKey => "GetCustomers";
+
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetByIdCustomerQueryHandler : IRequestHandler<GetByIdCustomerQuery, GetByIdCustomerResponse>
     {

@@ -13,4 +13,5 @@ public class GetListShipmentSummaryByWarehouseIdListItemDto
     public string ProductDescription { get; set; }
     public double ProductPrice { get; set; }
     public int TotalQuantity { get; set; }
+    public double TotalPrice { get; set; }
 }

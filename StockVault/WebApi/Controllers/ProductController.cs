@@ -2,16 +2,13 @@
 using Application.Features.Products.Commands.Delete;
 using Application.Features.Products.Commands.Update;
 using Application.Features.Products.Queries.GetById;
+using Application.Features.Products.Queries.GetByName;
 using Application.Features.Products.Queries.GetList;
 using Application.Features.Products.Queries.GetListCustomer;
 using Application.Features.Products.Queries.GetListShipment;
+using Application.Features.Products.Queries.GetListShipmentSummary;
+using Application.Features.Products.Queries.GetListTopSellingProduct;
 using Application.Features.Products.Queries.GetListWarehouse;
-using Application.Features.Warehouses.Commands.Create;
-using Application.Features.Warehouses.Commands.Delete;
-using Application.Features.Warehouses.Commands.Update;
-using Application.Features.Warehouses.Queries.GetById;
-using Application.Features.Warehouses.Queries.GetList;
-using Application.Features.Warehouses.Queries.GetListShipment;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -43,11 +40,19 @@ namespace WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             GetByIdProductQuery getByIdProductQuery = new() { Id = id };
             GetByIdProductResponse response = await Mediator.Send(getByIdProductQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("name/{name}")]
+        public async Task<IActionResult> GetByName([FromRoute] string name)
+        {
+            GetByNameProductQuery getByNameProductQuery = new() { Name = name };
+            GetByNameProductResponse response = await Mediator.Send(getByNameProductQuery);
             return Ok(response);
         }
 
@@ -60,7 +65,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}/Warehouse")]
-        public async Task<IActionResult> GetListWarehouse([FromQuery] PageRequest pageRequest,[FromRoute] int id)
+        public async Task<IActionResult> GetListWarehouse([FromRoute] int id, [FromQuery] PageRequest pageRequest)
         {
             GetListWarehouseByProductIdQuery getListWarehouseByProductIdQuery = new() { PageRequest = pageRequest, Id = id };
             GetListResponse<GetListWarehouseByProductIdListItemDto> response = await Mediator.Send(getListWarehouseByProductIdQuery);
@@ -86,5 +91,24 @@ namespace WebApi.Controllers
             GetListResponse<GetListCustomerByProductIdListItemDto> response = await Mediator.Send(getListCustomerByProductIdQuery);
             return Ok(response);
         }
+
+        [HttpGet("{id}/ShipmentSummary")]
+        public async Task<IActionResult> GetShipmentSummary([FromRoute] int id,
+            [FromQuery] DateTime? startDate = null,
+            [FromQuery] DateTime? endDate = null)
+        {
+            GetShipmentSummaryByProductIdQuery getShipmentSummaryByProductIdQuery = new() { Id = id, StartDate = startDate, EndDate = endDate };
+            GetShipmentSummaryByProductIdResponse response = await Mediator.Send(getShipmentSummaryByProductIdQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("TopSellingProducts")]
+        public async Task<IActionResult> GetListTopSellingProduct([FromQuery] PageRequest pageRequest, [FromQuery] DateTime? startDate = null, [FromQuery] DateTime? endDate = null)
+        {
+            GetListTopSellingProductQuery getListTopSellingProductQuery = new() { PageRequest = pageRequest, StartDate = startDate, EndDate = endDate };
+            GetListResponse<GetListTopSellingProductListItemDto> response = await Mediator.Send(getListTopSellingProductQuery);
+            return Ok(response);
+        }
+
     }
 }

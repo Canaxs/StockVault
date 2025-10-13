@@ -9,6 +9,13 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Infrastructure.Configurations;
+using Core.Application.Pipelines.Validation;
+using Core.Application.Pipelines.Transaction;
+using Core.Application.Pipelines.Caching;
+using Core.Security.JWT;
+using Core.CrossCuttingConcerns.Serilog;
+using Core.CrossCuttingConcerns.Serilog.Logger;
+using Core.Application.Pipelines.Logging;
 
 namespace Application;
 
@@ -30,7 +37,15 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(configuration =>
         {
             configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+
+            configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
+            configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
+            configuration.AddOpenBehavior(typeof(CachingBehavior<,>));
+            configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));
+            configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
+
+        services.AddSingleton<LoggerServiceBase, FileLogger>();
 
         return services;
     }

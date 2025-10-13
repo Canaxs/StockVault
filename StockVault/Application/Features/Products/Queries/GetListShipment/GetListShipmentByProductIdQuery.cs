@@ -18,8 +18,8 @@ namespace Application.Features.Products.Queries.GetListShipment;
 
 public class GetListShipmentByProductIdQuery: IRequest<GetListResponse<GetListShipmentByProductIdListItemDto>>
 {
-    public PageRequest PageRequest { get; set; }
     public int Id { get; set; }
+    public PageRequest PageRequest { get; set; }
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set; }
 

@@ -11,4 +11,5 @@ public class ProductStockMessages
     public const string ProductAlreadyInWarehouse = "This product is already available in this warehouse.";
     public const string ProductStockNotExist = "Product stock does not exist.";
     public const string NotEnoughSpaceForStock = "Not enough space in the warehouse for this quantity.";
+    public const string ProductNotFoundInWarehouse = "No product stock found for the given warehouse and product.";
 }

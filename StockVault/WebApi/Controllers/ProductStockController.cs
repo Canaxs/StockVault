@@ -1,13 +1,9 @@
-﻿using Application.Features.Products.Commands.Create;
-using Application.Features.Products.Commands.Delete;
-using Application.Features.Products.Commands.Update;
-using Application.Features.Products.Queries.GetById;
-using Application.Features.ProductStocks.Commands.Create;
+﻿using Application.Features.ProductStocks.Commands.Create;
 using Application.Features.ProductStocks.Commands.Delete;
 using Application.Features.ProductStocks.Commands.Update;
 using Application.Features.ProductStocks.Queries.GetById;
 using Application.Features.ProductStocks.Queries.GetList;
-using Application.Features.Warehouses.Queries.GetList;
+using Application.Features.ProductStocks.Queries.GetProductStockByProductAndWarehouse;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +48,14 @@ namespace WebApi.Controllers
         {
             GetListProductStockQuery getListProductStockQuery = new() { PageRequest = pageRequest };
             GetListResponse<GetListProductStockListItemDto> response = await Mediator.Send(getListProductStockQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("Product/{productId}/Warehouse/{warehouseId}")]
+        public async Task<IActionResult> GetProductStockByProductAndWarehouse([FromRoute] int productId, [FromRoute] int warehouseId)
+        {
+            GetProductStockByProductIdAndWarehouseIdQuery getProductStockByProductIdAndWarehouseIdQuery = new() { ProductId = productId, WarehouseId = warehouseId};
+            GetProductStockByProductIdAndWarehouseIdResponse response = await Mediator.Send(getProductStockByProductIdAndWarehouseIdQuery);
             return Ok(response);
         }
 

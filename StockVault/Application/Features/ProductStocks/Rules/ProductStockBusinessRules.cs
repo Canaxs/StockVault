@@ -46,4 +46,12 @@ public class ProductStockBusinessRules:BaseBusinessRules
         if (warehouse.CurrentCapacity + quantity > warehouse.MaxCapacity)
             throw new BusinessException(ProductStockMessages.NotEnoughSpaceForStock);
     }
+
+    public async Task CheckProductStockExistsInWarehouse(int productId, int warehouseId)
+    {
+        bool result = await _productStockRepository.AnyAsync(ps => ps.WarehouseId == warehouseId && ps.ProductId == productId);
+
+        if (!result)
+            throw new BusinessException(ProductStockMessages.ProductNotFoundInWarehouse);
+    }
 }

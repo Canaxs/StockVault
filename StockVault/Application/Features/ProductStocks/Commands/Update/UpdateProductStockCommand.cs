@@ -1,6 +1,7 @@
 ﻿using Application.Features.ProductStocks.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductStocks.Commands.Update;
 
-public class UpdateProductStockCommand:IRequest<UpdatedProductStockResponse>
+public class UpdateProductStockCommand:IRequest<UpdatedProductStockResponse>, ITransactionalRequest
 {
     public int Id { get; set;}
     public int Quantity { get; set;}

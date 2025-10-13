@@ -1,6 +1,7 @@
 ﻿using Application.Features.Products.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,9 +12,16 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Queries.GetByName;
 
-public class GetByNameProductQuery:IRequest<GetByNameProductResponse>
+public class GetByNameProductQuery:IRequest<GetByNameProductResponse>, ICacheableRequest
 {
     public string Name { get; set; }
+    public string CacheKey => $"GetByProductName-{Name}";
+
+    public bool BypassCache { get; }
+
+    public string? CacheGroupKey => "GetProducts";
+
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetByNameProductQueryHandler : IRequestHandler<GetByNameProductQuery, GetByNameProductResponse>
     {

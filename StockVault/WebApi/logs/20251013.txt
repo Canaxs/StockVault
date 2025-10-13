@@ -1,0 +1,2 @@
+2025-10-13 15:57:11.250 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"?","Parameters":[{"Name":"","Value":{"Name":"deneme","Location":"deneme","MaxCapacity":555},"Type":"CreateWarehouseCommand"}]}
+2025-10-13 15:58:50.745 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"?","Parameters":[{"Name":"","Value":{"Name":"\u0130zmir Deposu 1","Location":"\u0130zmir","MaxCapacity":5000},"Type":"CreateWarehouseCommand"}]}

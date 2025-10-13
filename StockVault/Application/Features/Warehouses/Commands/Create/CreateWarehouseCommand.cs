@@ -1,6 +1,7 @@
 ﻿using Application.Features.Warehouses.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Warehouses.Commands.Create;
 
-public class CreateWarehouseCommand:IRequest<CreatedWarehouseResponse>
+public class CreateWarehouseCommand:IRequest<CreatedWarehouseResponse>, ILoggableRequest
 {
     public string Name { get; set; }
     public string Location { get; set; }

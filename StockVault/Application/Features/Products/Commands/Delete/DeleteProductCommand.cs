@@ -3,6 +3,7 @@ using Application.Features.Products.Rules;
 using Application.Features.Warehouses.Commands.Delete;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -13,9 +14,15 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Commands.Delete;
 
-public class DeleteProductCommand:IRequest<DeletedProductResponse>
+public class DeleteProductCommand:IRequest<DeletedProductResponse>,ICacheRemoverRequest
 {
     public int Id { get; set; }
+
+    public string? CacheKey => "";
+
+    public bool BypassCache => false;
+
+    public string? CacheGroupKey => "GetProducts";
 
     public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, DeletedProductResponse>
     {

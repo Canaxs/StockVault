@@ -111,6 +111,30 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
         return await finalQuery.ToPaginateAsync(index, size, cancellationToken);
     }
 
+    public async Task<TResult?> GetProjectedAsync<TResult>(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Func<IQueryable<TEntity>, IQueryable<TResult>>? groupBy = null, Expression<Func<TEntity, TResult>>? selector = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
+    {
+        IQueryable<TEntity> queryable = Query();
+        if (!enableTracking)
+            queryable = queryable.AsNoTracking();
+        if (include != null)
+            queryable = include(queryable);
+        if (withDeleted)
+            queryable = queryable.IgnoreQueryFilters();
+
+        IQueryable<TResult> finalQuery;
+
+        if (groupBy != null) {
+            finalQuery = groupBy(queryable);
+        }
+        else {
+            if (selector == null)
+                throw new ArgumentNullException(nameof(selector));
+
+            finalQuery = queryable.Select(selector);
+        }
+
+        return await finalQuery.FirstOrDefaultAsync(cancellationToken);
+    }
     public IQueryable<TEntity> Query()
     {
         return Context.Set<TEntity>();

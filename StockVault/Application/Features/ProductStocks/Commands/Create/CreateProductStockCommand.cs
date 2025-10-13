@@ -1,6 +1,7 @@
 ﻿using Application.Features.ProductStocks.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductStocks.Commands.Create;
 
-public class CreateProductStockCommand:IRequest<CreatedProductStockResponse>
+public class CreateProductStockCommand:IRequest<CreatedProductStockResponse>,ITransactionalRequest
 {
     public int ProductId { get; set; }
     public int WarehouseId { get; set; }

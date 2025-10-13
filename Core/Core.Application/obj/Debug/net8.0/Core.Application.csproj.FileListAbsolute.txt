@@ -13,3 +13,6 @@ C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\bin\Debug\net8.
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\bin\Debug\net8.0\Core.Persistence.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\obj\Debug\net8.0\Core.Application.csproj.AssemblyReference.cache
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\obj\Debug\net8.0\Core.App.01B2A2D7.Up2Date
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Application\obj\Debug\net8.0\Core.Application.sourcelink.json

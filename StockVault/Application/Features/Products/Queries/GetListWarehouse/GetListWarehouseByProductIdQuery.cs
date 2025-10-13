@@ -17,8 +17,8 @@ namespace Application.Features.Products.Queries.GetListWarehouse;
 
 public class GetListWarehouseByProductIdQuery:IRequest<GetListResponse<GetListWarehouseByProductIdListItemDto>>
 {
-    public PageRequest PageRequest;
     public int Id { get; set; }
+    public PageRequest PageRequest { get; set; }
 
     public class GetListWarehouseByProductIdQueryHandler : IRequestHandler<GetListWarehouseByProductIdQuery, GetListResponse<GetListWarehouseByProductIdListItemDto>>
     {

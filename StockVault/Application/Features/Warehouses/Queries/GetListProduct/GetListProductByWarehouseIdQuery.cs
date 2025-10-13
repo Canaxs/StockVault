@@ -41,6 +41,7 @@ public class GetListProductByWarehouseIdQuery: IRequest<GetListResponse<GetListP
             Paginate<ProductStock> productStocks = await _productStockRepository.GetListAsync(
                 predicate: ps => ps.WarehouseId == request.Id,
                 include: ps => ps.Include(ps => ps.Product),
+                orderBy: q => q.OrderBy(ps => ps.Quantity),
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
                 cancellationToken: cancellationToken

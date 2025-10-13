@@ -8,12 +8,14 @@ using Application.Features.Warehouses.Queries.GetListShipment;
 using Application.Features.Warehouses.Queries.GetListShipmentSummary;
 using Core.Application.Requests;
 using Core.Application.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class WarehouseController : BaseController
     {
         [HttpPost]
@@ -54,7 +56,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}/Products")]
-        public async Task<IActionResult> GetListProduct([FromQuery] PageRequest pageRequest, [FromRoute] int id)
+        public async Task<IActionResult> GetListProduct([FromRoute] int id,[FromQuery] PageRequest pageRequest)
         {
             GetListProductByWarehouseIdQuery getListProductByWarehouseIdQuery = new() { PageRequest = pageRequest, Id = id };
             GetListResponse<GetListProductByWarehouseIdListItemDto> response = await Mediator.Send(getListProductByWarehouseIdQuery);

@@ -1,6 +1,7 @@
 ﻿using Application.Features.Warehouses.Queries.GetList;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -14,9 +15,16 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Queries.GetList;
 
-public class GetListCustomerQuery:IRequest<GetListResponse<GetListCustomerListItemDto>>
+public class GetListCustomerQuery:IRequest<GetListResponse<GetListCustomerListItemDto>>, ICacheableRequest
 {
     public PageRequest PageRequest { get; set; }
+    public string CacheKey => $"GetListCustomerQuery({PageRequest.PageIndex},{PageRequest.PageSize})";
+
+    public bool BypassCache { get; }
+
+    public string? CacheGroupKey => "GetCustomers";
+
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetListCustomerQueryHandler : IRequestHandler<GetListCustomerQuery, GetListResponse<GetListCustomerListItemDto>>
     {

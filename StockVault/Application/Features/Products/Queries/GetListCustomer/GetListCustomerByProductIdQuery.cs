@@ -17,8 +17,8 @@ namespace Application.Features.Products.Queries.GetListCustomer;
 
 public class GetListCustomerByProductIdQuery:IRequest<GetListResponse<GetListCustomerByProductIdListItemDto>>
 {
-    public PageRequest PageRequest { get; set; }
     public int Id { get; set; }
+    public PageRequest PageRequest { get; set; }
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set; }
 
@@ -43,9 +43,9 @@ public class GetListCustomerByProductIdQuery:IRequest<GetListResponse<GetListCus
                 predicate: s => s.ProductId == request.Id
                         && (!request.StartDate.HasValue || s.CreatedDate >= request.StartDate.Value)
                         && (!request.EndDate.HasValue || s.CreatedDate <= request.EndDate.Value),
-                include: s => s.Include(s => s.Customer),
+                include: s => s.Include(s => s.Customer).Include(s => s.Product),
                 groupBy: q => q
-                .GroupBy(s => s.ProductId)
+                .GroupBy(s => s.CustomerId)
                 .Select(g => new GetListCustomerByProductIdListItemDto
                 {
                     Id = g.First().Id,
@@ -55,7 +55,7 @@ public class GetListCustomerByProductIdQuery:IRequest<GetListResponse<GetListCus
                     CustomerName = g.First().Customer.Name,
                     CustomerPhoneNumber = g.First().Customer.PhoneNumber,
                     TotalQuantity = g.Sum(x => x.Quantity)
-                }),
+                }).OrderByDescending(g => g.TotalQuantity),
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
                 cancellationToken: cancellationToken

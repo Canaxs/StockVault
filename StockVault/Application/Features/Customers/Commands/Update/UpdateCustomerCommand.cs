@@ -1,6 +1,7 @@
 ﻿using Application.Features.Customers.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -11,14 +12,20 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Customers.Commands.Update;
 
-public class UpdateCustomerCommand : IRequest<UpdatedCustomerResponse>
+public class UpdateCustomerCommand : IRequest<UpdatedCustomerResponse>,ICacheRemoverRequest
 {
     public int Id { get; set; }
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public string? CompanyName { get; set; }
-    public string Address { get; set; }
-    public string City { get; set; }
-    public string PhoneNumber { get; set; }
+    public string? Address { get; set; }
+    public string? City { get; set; }
+    public string? PhoneNumber { get; set; }
+
+    public string? CacheKey => "";
+
+    public bool BypassCache => false;
+
+    public string? CacheGroupKey => "GetCustomers";
 
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, UpdatedCustomerResponse>
     {
@@ -39,7 +46,21 @@ public class UpdateCustomerCommand : IRequest<UpdatedCustomerResponse>
 
             Customer customer = await _customerRepository.GetAsync(predicate: c => c.Id == request.Id);
 
-            customer = _mapper.Map(request, customer);
+            if (!string.IsNullOrWhiteSpace(request.Name) && !string.Equals(customer?.Name, request.Name, StringComparison.Ordinal))
+                customer.Name = request.Name;
+
+            if (!string.IsNullOrWhiteSpace(request.CompanyName) && !string.Equals(customer?.CompanyName, request.CompanyName, StringComparison.Ordinal))
+                customer.CompanyName = request.CompanyName;
+
+            if (!string.IsNullOrWhiteSpace(request.Address) && !string.Equals(customer?.Address, request.Address, StringComparison.Ordinal))
+                customer.Address = request.Address;
+
+            if (!string.IsNullOrWhiteSpace(request.City) && !string.Equals(customer?.City, request.City, StringComparison.Ordinal))
+                customer.City = request.City;
+
+            if (!string.IsNullOrWhiteSpace(request.PhoneNumber) && !string.Equals(customer?.PhoneNumber, request.PhoneNumber, StringComparison.Ordinal))
+                customer.PhoneNumber = request.PhoneNumber;
+
 
             await _customerRepository.UpdateAsync(customer);
 

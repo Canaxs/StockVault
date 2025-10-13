@@ -3,12 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29F47F67-4D1E-4E01-8CC4-B5DC217201B3}|..\\Core.CrossCuttingConcerns\\Core.CrossCuttingConcerns.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.crosscuttingconcerns\\serilog\\logger\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{451ACAD5-6918-48F3-95E6-2EEFCFDB901C}|..\\Core.Application\\Core.Application.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.application\\pipelines\\logging\\loggingbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +21,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EfRepositoryBase.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
-              "RelativeDocumentMoniker": "Repositories\\EfRepositoryBase.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
-              "RelativeToolTip": "Repositories\\EfRepositoryBase.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAwwGwAAAAJAAAA",
+              "Title": "LoggingBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Logging\\LoggingBehavior.cs",
+              "RelativeDocumentMoniker": "..\\Core.Application\\Pipelines\\Logging\\LoggingBehavior.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Logging\\LoggingBehavior.cs",
+              "RelativeToolTip": "..\\Core.Application\\Pipelines\\Logging\\LoggingBehavior.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwCoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T13:34:54.668Z",
+              "WhenOpened": "2025-10-13T13:06:47.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IAsyncRepository.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\IAsyncRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\IAsyncRepository.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\IAsyncRepository.cs",
-              "RelativeToolTip": "Repositories\\IAsyncRepository.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCUAAAA8AAAA",
+              "Title": "FileLogger.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.CrossCuttingConcerns\\Serilog\\Logger\\FileLogger.cs",
+              "RelativeDocumentMoniker": "..\\Core.CrossCuttingConcerns\\Serilog\\Logger\\FileLogger.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.CrossCuttingConcerns\\Serilog\\Logger\\FileLogger.cs",
+              "RelativeToolTip": "..\\Core.CrossCuttingConcerns\\Serilog\\Logger\\FileLogger.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAkwB0AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T13:27:56.854Z",
+              "WhenOpened": "2025-10-13T12:23:39.509Z",
               "EditorCaption": ""
             }
           ]

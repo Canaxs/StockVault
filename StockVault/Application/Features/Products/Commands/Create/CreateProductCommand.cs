@@ -2,6 +2,7 @@
 using Application.Features.Warehouses.Commands.Create;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -12,11 +13,17 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Commands.Create;
 
-public class CreateProductCommand: IRequest<CreatedProductResponse>
+public class CreateProductCommand: IRequest<CreatedProductResponse>,ICacheRemoverRequest
 {
     public string Name { get; set; }
     public string? Description { get; set; }
     public double Price { get; set; }
+
+    public string? CacheKey => "";
+
+    public bool BypassCache => false;
+
+    public string? CacheGroupKey => "GetProducts";
 
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreatedProductResponse>
     {

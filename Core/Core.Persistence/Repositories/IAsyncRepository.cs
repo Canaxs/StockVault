@@ -43,6 +43,15 @@ public interface IAsyncRepository<TEntity, TEntityId> : IQuery<TEntity> where TE
         CancellationToken cancellationToken = default
     );
 
+    Task<TResult?> GetProjectedAsync<TResult>(
+        Expression<Func<TEntity, bool>> predicate,
+        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
+        Func<IQueryable<TEntity>, IQueryable<TResult>>? groupBy = null,
+        Expression<Func<TEntity, TResult>>? selector = null,
+        bool withDeleted = false,
+        bool enableTracking = true,
+        CancellationToken cancellationToken = default);
+
 
     Task<bool> AnyAsync(
        Expression<Func<TEntity, bool>>? predicate = null,

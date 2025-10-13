@@ -9,3 +9,8 @@ C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\C
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\refint\Core.Security.dll
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.pdb
 C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\ref\Core.Security.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\bin\Debug\net8.0\Core.Persistence.dll
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\bin\Debug\net8.0\Core.Persistence.pdb
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.csproj.AssemblyReference.cache
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Security.sourcelink.json
+C:\Users\meroc\Documents\GitHub\StockVault\Core\Core.Security\obj\Debug\net8.0\Core.Sec.BBB94791.Up2Date

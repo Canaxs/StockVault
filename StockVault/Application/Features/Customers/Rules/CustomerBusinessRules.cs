@@ -21,7 +21,7 @@ public class CustomerBusinessRules:BaseBusinessRules
 
     public async Task CheckIfCustomerIdExists(int id)
     {
-        bool result = await _customerRepository.AnyAsync(c=> c.Id == id);
+        bool result = await _customerRepository.AnyAsync(c => c.Id == id);
 
         if (!result)
             throw new NotFoundException(CustomerMessages.CustomerNotFoundOrAlreadyDeleted);

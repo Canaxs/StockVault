@@ -2,6 +2,8 @@
 using Application.Features.Warehouses.Queries.GetById;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
+using Core.Application.Requests;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -12,9 +14,16 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Queries.GetById;
 
-public class GetByIdProductQuery:IRequest<GetByIdProductResponse>
+public class GetByIdProductQuery:IRequest<GetByIdProductResponse>,ICacheableRequest
 {
     public int Id { get; set; }
+    public string CacheKey => $"GetByProductId-{Id}";
+
+    public bool BypassCache { get; }
+
+    public string? CacheGroupKey => "GetProducts";
+
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetByIdProductQueryHandler: IRequestHandler<GetByIdProductQuery, GetByIdProductResponse>
     {

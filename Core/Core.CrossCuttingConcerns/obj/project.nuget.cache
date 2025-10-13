@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "21cY5fexytf9CFuoik2T2LvkZp32b+GJYr9Nj11LJyNu5ZBEVExYSIEi4UzvU8pC0SrRuKyT7ZgvNyGgmYbZMw==",
+  "dgSpecHash": "LBoaRJGnJ4rGXgC9V19f15m5UTd7DxImn2K1s8zYkrs9Ywob4oeVggHYRzx6eg1vdtXmDRSirVws1gVGNDwLlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.CrossCuttingConcerns\\Core.CrossCuttingConcerns.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,8 @@
     "C:\\Users\\meroc\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
+    "C:\\Users\\meroc\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
+    "C:\\Users\\meroc\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
