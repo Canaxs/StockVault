@@ -17,8 +17,10 @@
           "Serilog.Sinks.File": "7.0.0",
           "Swashbuckle.AspNetCore": "6.4.0",
           "System.IdentityModel.Tokens.Jwt": "8.14.0",
+          "System.Linq.Dynamic.Core": "1.6.9",
           "Core.Application": "1.0.0.0",
           "Core.CrossCuttingConcerns": "1.0.0.0",
+          "Core.Persistence": "1.0.0.0",
           "Core.Security": "1.0.0.0"
         },
         "runtime": {
@@ -1042,6 +1044,14 @@
           }
         }
       },
+      "System.Linq.Dynamic.Core/1.6.9": {
+        "runtime": {
+          "lib/net8.0/System.Linq.Dynamic.Core.dll": {
+            "assemblyVersion": "1.6.9.0",
+            "fileVersion": "1.6.9.0"
+          }
+        }
+      },
       "System.Memory/4.5.4": {},
       "System.Memory.Data/1.0.2": {
         "dependencies": {
@@ -1223,17 +1233,17 @@
           }
         }
       },
-      "Core.Security/1.0.0.0": {
+      "Core.Persistence/1.0.0.0": {
         "runtime": {
-          "Core.Security.dll": {
+          "Core.Persistence.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "Core.Persistence/1.0.0.0": {
+      "Core.Security/1.0.0.0": {
         "runtime": {
-          "Core.Persistence.dll": {
+          "Core.Security.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1751,6 +1761,13 @@
       "path": "system.io.pipelines/9.0.9",
       "hashPath": "system.io.pipelines.9.0.9.nupkg.sha512"
     },
+    "System.Linq.Dynamic.Core/1.6.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+3M85Vti20gPSo8fObzbmoxbL3bwNwHGl/ViI2FESuVUS+AORy8snrnvDE8jhYbyrTIfs9ge3lj8eOYw9HeY+w==",
+      "path": "system.linq.dynamic.core/1.6.9",
+      "hashPath": "system.linq.dynamic.core.1.6.9.nupkg.sha512"
+    },
     "System.Memory/4.5.4": {
       "type": "package",
       "serviceable": true,
@@ -1900,12 +1917,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Core.Security/1.0.0.0": {
+    "Core.Persistence/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Core.Persistence/1.0.0.0": {
+    "Core.Security/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

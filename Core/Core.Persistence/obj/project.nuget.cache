@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YP2erG/KkQv/l2Z98GS/EkjYUDMAZBzQoWJ6LhKfV3oK92oMo5crvRBXhRbpmkjFH4kKj2jmFyDo/hpZ23yxzQ==",
+  "dgSpecHash": "zmbgd9ZWq7zoaX55tOEpbluH6itA71oR/mVZ9Im3zmR/ihFI/bIeIM9oDlQLnzYMvRXBIlRMx7L6XrpnLOZYMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Core.Persistence.csproj",
   "expectedPackageFiles": [
@@ -72,7 +72,7 @@
     "C:\\Users\\meroc\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
-    "C:\\Users\\meroc\\.nuget\\packages\\system.linq.dynamic.core\\1.6.8\\system.linq.dynamic.core.1.6.8.nupkg.sha512",
+    "C:\\Users\\meroc\\.nuget\\packages\\system.linq.dynamic.core\\1.6.9\\system.linq.dynamic.core.1.6.9.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",

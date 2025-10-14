@@ -4,6 +4,7 @@ using Application.Features.Products.Commands.Update;
 using Application.Features.Products.Queries.GetById;
 using Application.Features.Products.Queries.GetByName;
 using Application.Features.Products.Queries.GetList;
+using Application.Features.Products.Queries.GetListByDynamicName;
 using Application.Features.Products.Queries.GetListCustomer;
 using Application.Features.Products.Queries.GetListShipment;
 using Application.Features.Products.Queries.GetListTopSellingProduct;
@@ -60,6 +61,10 @@ public class MappingProfiles : Profile
         CreateMap<Paginate<GetListCustomerByProductIdListItemDto>, GetListResponse<GetListCustomerByProductIdListItemDto>>().ReverseMap();
 
         CreateMap<Paginate<GetListTopSellingProductListItemDto>, GetListResponse<GetListTopSellingProductListItemDto>>().ReverseMap();
+
+        CreateMap<Product, GetListByDynamicNameListItemDto>().ReverseMap();
+
+        CreateMap<Paginate<Product>, GetListResponse<GetListByDynamicNameListItemDto>>().ReverseMap();
 
     }
 }

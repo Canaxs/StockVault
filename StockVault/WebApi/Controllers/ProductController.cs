@@ -4,6 +4,7 @@ using Application.Features.Products.Commands.Update;
 using Application.Features.Products.Queries.GetById;
 using Application.Features.Products.Queries.GetByName;
 using Application.Features.Products.Queries.GetList;
+using Application.Features.Products.Queries.GetListByDynamicName;
 using Application.Features.Products.Queries.GetListCustomer;
 using Application.Features.Products.Queries.GetListShipment;
 using Application.Features.Products.Queries.GetListShipmentSummary;
@@ -63,6 +64,16 @@ namespace WebApi.Controllers
         {
             GetListProductQuery getListProductQuery = new() { PageRequest = pageRequest };
             GetListResponse<GetListProductListItemDto> response = await Mediator.Send(getListProductQuery);
+            return Ok(response);
+        }
+
+        [HttpGet("DynamicName")]
+        public async Task<IActionResult> GetListByDynamicName([FromQuery] PageRequest pageRequest,
+            [FromQuery] string fieldValue, [FromQuery] string fieldOperator,
+            [FromQuery] string sortField, [FromQuery] string sortDir)
+        {
+            GetListByDynamicNameQuery getListByDynamicNameQuery = new() { PageRequest = pageRequest, FieldValue = fieldValue, FieldOperator = fieldOperator, SortField = sortField, SortDir = sortDir};
+            GetListResponse<GetListByDynamicNameListItemDto> response = await Mediator.Send(getListByDynamicNameQuery);
             return Ok(response);
         }
 

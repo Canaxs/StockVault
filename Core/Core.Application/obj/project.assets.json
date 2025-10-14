@@ -1745,7 +1745,7 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
-      "System.Linq.Dynamic.Core/1.6.8": {
+      "System.Linq.Dynamic.Core/1.6.9": {
         "type": "package",
         "compile": {
           "lib/net8.0/System.Linq.Dynamic.Core.dll": {
@@ -2841,7 +2841,7 @@
         "dependencies": {
           "EntityFrameworkCore.Query": "1.3.1.2",
           "Microsoft.EntityFrameworkCore": "9.0.9",
-          "System.Linq.Dynamic.Core": "1.6.8"
+          "System.Linq.Dynamic.Core": "1.6.9"
         },
         "compile": {
           "bin/placeholder/Core.Persistence.dll": {}
@@ -5809,10 +5809,10 @@
         "system.linq.nuspec"
       ]
     },
-    "System.Linq.Dynamic.Core/1.6.8": {
-      "sha512": "UjDFFyeNwoGN08bx04DDAhEFbxbc33pAn13V53FnXsPt6QlzlSbfJ8rEhTtXbq1uzjYweRguhs7Zav0bbDTT1g==",
+    "System.Linq.Dynamic.Core/1.6.9": {
+      "sha512": "+3M85Vti20gPSo8fObzbmoxbL3bwNwHGl/ViI2FESuVUS+AORy8snrnvDE8jhYbyrTIfs9ge3lj8eOYw9HeY+w==",
       "type": "package",
-      "path": "system.linq.dynamic.core/1.6.8",
+      "path": "system.linq.dynamic.core/1.6.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5867,7 +5867,7 @@
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pri",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.xml",
         "logo.png",
-        "system.linq.dynamic.core.1.6.8.nupkg.sha512",
+        "system.linq.dynamic.core.1.6.9.nupkg.sha512",
         "system.linq.dynamic.core.nuspec"
       ]
     },

@@ -3,10 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E940350-1AB1-48B5-9D98-9148D24B6A30}|..\\Core.Security\\Core.Security.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.security\\jwt\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\dynamic\\iqueryabledynamicfilterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:dynamic\\iqueryabledynamicfilterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E940350-1AB1-48B5-9D98-9148D24B6A30}|..\\Core.Security\\Core.Security.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.security\\jwt\\itokenhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\dynamic\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:dynamic\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JwtHelper.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\JwtHelper.cs",
-              "RelativeDocumentMoniker": "..\\Core.Security\\JWT\\JwtHelper.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\JwtHelper.cs",
-              "RelativeToolTip": "..\\Core.Security\\JWT\\JwtHelper.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwDQAAAAFAAAA",
+              "Title": "IQueryableDynamicFilterExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\IQueryableDynamicFilterExtensions.cs",
+              "RelativeDocumentMoniker": "Dynamic\\IQueryableDynamicFilterExtensions.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\IQueryableDynamicFilterExtensions.cs",
+              "RelativeToolTip": "Dynamic\\IQueryableDynamicFilterExtensions.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAswEIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T16:08:52.098Z",
+              "WhenOpened": "2025-10-14T09:05:06.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ITokenHelper.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\ITokenHelper.cs",
-              "RelativeDocumentMoniker": "..\\Core.Security\\JWT\\ITokenHelper.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\ITokenHelper.cs",
-              "RelativeToolTip": "..\\Core.Security\\JWT\\ITokenHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Filter.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\Filter.cs",
+              "RelativeDocumentMoniker": "Dynamic\\Filter.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\Filter.cs",
+              "RelativeToolTip": "Dynamic\\Filter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T16:08:50.358Z",
+              "WhenOpened": "2025-10-14T08:55:50.295Z",
               "EditorCaption": ""
             }
           ]

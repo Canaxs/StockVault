@@ -1,4 +1,5 @@
-﻿using Core.Persistence.Paging;
+﻿using Core.Persistence.Dynamic;
+using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Query;
@@ -135,6 +136,22 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
 
         return await finalQuery.FirstOrDefaultAsync(cancellationToken);
     }
+
+    public async Task<Paginate<TEntity>> GetListByDynamicAsync(DynamicQuery dynamic, Expression<Func<TEntity, bool>>? predicate = null, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, int index = 0, int size = 10, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
+    {
+        IQueryable<TEntity> queryable = Query().ToDynamic(dynamic);
+        if (!enableTracking)
+            queryable = queryable.AsNoTracking();
+        if (include != null)
+            queryable = include(queryable);
+        if (withDeleted)
+            queryable = queryable.IgnoreQueryFilters();
+        if (predicate != null)
+            queryable = queryable.Where(predicate);
+
+        return await queryable.ToPaginateAsync(index, size, cancellationToken);
+    }
+
     public IQueryable<TEntity> Query()
     {
         return Context.Set<TEntity>();

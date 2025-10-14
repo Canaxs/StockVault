@@ -192,3 +192,4 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Co
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Serilog.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
