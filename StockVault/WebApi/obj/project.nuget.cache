@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+60yvare9A9jvv3Dk8zQWJl86lzXpgXcWzRKDBbtwF/8fQHX5mvNjPGfHKWf61NJ/ztEayJj907ITjKJ6cRayQ==",
+  "dgSpecHash": "H5zrl5XEXRMk9JfHQgu3+4axMogAh/ogEF+wgxWInxW3iY2yoaXZtfzt2Mm38np/nYtkuiZiglT49oZeXljwZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\meroc\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\meroc\\.nuget\\packages\\bogus\\35.6.4\\bogus.35.6.4.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "C:\\Users\\meroc\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

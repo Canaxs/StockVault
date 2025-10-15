@@ -193,3 +193,4 @@ C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Mi
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Serilog.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
+C:\Users\meroc\Documents\GitHub\StockVault\StockVault\WebApi\bin\Debug\net8.0\Bogus.dll

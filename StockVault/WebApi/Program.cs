@@ -66,7 +66,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-//app.Services.InitializeDatabase(); // Eðer ilk kez kullanýyorsanýz burayý aktif etmelisiniz
+await app.Services.InitializeDatabase(); // Eðer ilk kez kullanýyorsanýz burayý aktif etmelisiniz
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

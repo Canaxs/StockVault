@@ -19,8 +19,6 @@ public static class PersistenceServiceRegistration
     {
         services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("StockVault")));
 
-        //services.AddScoped<DbInitializer>();
-
         services.AddScoped<ICustomerRepository, CustomerRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductStockRepository, ProductStockRepository>();
@@ -34,11 +32,11 @@ public static class PersistenceServiceRegistration
         return services;
     }
 
-    public static void InitializeDatabase(this IServiceProvider serviceProvider)
+    public static async Task InitializeDatabase(this IServiceProvider serviceProvider)
     {
         using var scope = serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<BaseDbContext>();
 
-        DbInitializer.Seed(context);
+        await DbInitializer.Seed(context);
     }
 }

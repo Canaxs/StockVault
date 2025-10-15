@@ -1,6 +1,7 @@
 ﻿using Core.Security.Entities;
 using Core.Security.Hashing;
 using Persistence.Contexts;
+using Persistence.Seeders.Generators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.Seeders;
 
-public  class DbInitializer
+public static class DbInitializer
 {
-    public static void Seed(BaseDbContext context)
+    public static async Task Seed(BaseDbContext context)
     {
         if (!context.Users.Any())
         {
@@ -30,7 +31,7 @@ public  class DbInitializer
             };
 
             context.Users.Add(adminUser);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
             var allClaims = context.OperationClaims.ToList();
             var adminClaims = allClaims
@@ -38,7 +39,28 @@ public  class DbInitializer
                 .ToList();
 
             context.UserOperationClaims.AddRange(adminClaims);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
+    
+
+        if(!context.Warehouses.Any() && !context.Products.Any() && !context.Customers.Any())
+        {
+            var warehouses = WarehouseDataGenerator.Generate(5);
+            context.Warehouses.AddRange(warehouses);
+            await context.SaveChangesAsync();
+
+            var products = ProductDataGenerator.Generate(50);
+            context.Products.AddRange(products);
+            await context.SaveChangesAsync();
+
+            var customers = CustomerDataGenerator.Generate(20);
+            context.Customers.AddRange(customers);
+            await context.SaveChangesAsync();
+
+            var stocks = ProductStockDataGenerator.Generate(products, warehouses);
+            context.ProductStocks.AddRange(stocks);
+            await context.SaveChangesAsync();
+        }
+    
     }
 }

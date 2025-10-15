@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\dynamic\\iqueryabledynamicfilterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:dynamic\\iqueryabledynamicfilterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\dynamic\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:dynamic\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IQueryableDynamicFilterExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\IQueryableDynamicFilterExtensions.cs",
-              "RelativeDocumentMoniker": "Dynamic\\IQueryableDynamicFilterExtensions.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\IQueryableDynamicFilterExtensions.cs",
-              "RelativeToolTip": "Dynamic\\IQueryableDynamicFilterExtensions.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAswEIAAAAQAAAA",
+              "Title": "EfRepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
+              "RelativeDocumentMoniker": "Repositories\\EfRepositoryBase.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
+              "RelativeToolTip": "Repositories\\EfRepositoryBase.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAIA2wMcAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T09:05:06.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Filter.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\Filter.cs",
-              "RelativeDocumentMoniker": "Dynamic\\Filter.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Dynamic\\Filter.cs",
-              "RelativeToolTip": "Dynamic\\Filter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T08:55:50.295Z",
+              "WhenOpened": "2025-10-14T11:18:04.48Z",
               "EditorCaption": ""
             }
           ]
