@@ -1,0 +1,28 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio
+*.user
+*.suo
+*.vscode/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# Debug / Release outputs
+*.dll
+*.pdb
+*.exe
+*.app
+*.class
+*.jar
+*.pyc
+*.pyo
+*.out
