@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
@@ -24,33 +25,6 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
     public EfRepositoryBase(TContext context)
     {
         Context = context;
-    }
-
-    public async Task<TEntity> AddAsync(TEntity entity)
-    {
-        entity.CreatedDate = DateTime.UtcNow;
-        await Context.AddAsync(entity);
-        await Context.SaveChangesAsync();
-        return entity;
-    }
-
-    public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
-    {
-        IQueryable<TEntity> queryable = Query();
-        if (!enableTracking)
-            queryable = queryable.AsNoTracking();
-        if (withDeleted)
-            queryable = queryable.IgnoreQueryFilters();
-        if (predicate != null)
-            queryable = queryable.Where(predicate);
-        return await queryable.AnyAsync(cancellationToken);
-    }
-
-    public async Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false)
-    {
-        await SetEntityAsDeletedAsync(entity, permanent);
-        await Context.SaveChangesAsync();
-        return entity;
     }
 
     public async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
@@ -157,13 +131,48 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
         return Context.Set<TEntity>();
     }
 
-    public async Task<TEntity> UpdateAsync(TEntity entity)
+    public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
     {
+        IQueryable<TEntity> queryable = Query();
+        if (!enableTracking)
+            queryable = queryable.AsNoTracking();
+        if (withDeleted)
+            queryable = queryable.IgnoreQueryFilters();
+        if (predicate != null)
+            queryable = queryable.Where(predicate);
+        return await queryable.AnyAsync(cancellationToken);
+    }
+
+    public async Task<TEntity> AddAsync(TEntity entity)
+    {
+        entity.CreatedDate = DateTime.UtcNow;
+        await Context.AddAsync(entity);
+        await Context.SaveChangesAsync();
+        return entity;
+    }
+
+    public async Task<TEntity> UpdateAsync(TEntity entity)
+    {   
         entity.UpdatedDate = DateTime.UtcNow;
         Context.Update(entity);
         await Context.SaveChangesAsync();
         return entity;
     }
+
+    public async Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false)
+    {
+        await SetEntityAsDeletedAsync(entity, permanent);
+        await Context.SaveChangesAsync();
+        return entity;
+    }
+
+    public Task<int> UpdateExecuteAsync(Expression<Func<TEntity, bool>> predicate, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+    {
+        return Query().Where(predicate).ExecuteUpdateAsync(setPropertyCalls);
+    }
+
+
+    //
     protected async Task SetEntityAsDeletedAsync(TEntity entity, bool permanent)
     {
         if (!permanent)
@@ -263,4 +272,5 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
         foreach (TEntity entity in entities)
             await SetEntityAsDeletedAsync(entity, permanent);
     }
+    //
 }

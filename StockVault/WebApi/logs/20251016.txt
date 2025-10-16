@@ -1,0 +1,7 @@
+2025-10-16 11:41:12.760 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"ProductId":6,"WarehouseId":1,"CustomerId":1,"Quantity":5,"Notes":"deneme"},"Type":"CreateShipmentCommand"}]}
+2025-10-16 11:44:16.622 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"Id":1,"DeliveryStatus":2},"Type":"UpdateShipmentCommand"}]}
+2025-10-16 11:57:30.448 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"ProductId":5,"WarehouseId":3,"Quantity":100},"Type":"CreateProductStockCommand"}]}
+2025-10-16 11:58:24.301 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"Id":52,"Quantity":95},"Type":"UpdateProductStockCommand"}]}
+2025-10-16 11:59:00.566 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"Id":52,"Quantity":90},"Type":"UpdateProductStockCommand"}]}
+2025-10-16 11:59:17.535 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"Id":52,"Quantity":120},"Type":"UpdateProductStockCommand"}]}
+2025-10-16 11:59:47.512 +03:00 [Information] {"FullName":"","MethodName":"\u003CHandle\u003Eg__Handler|0","User":"Admin","Parameters":[{"Name":"","Value":{"Id":52},"Type":"DeleteProductStockCommand"}]}

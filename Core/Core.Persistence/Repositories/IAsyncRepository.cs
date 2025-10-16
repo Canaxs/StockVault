@@ -2,6 +2,7 @@
 using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -76,4 +77,6 @@ public interface IAsyncRepository<TEntity, TEntityId> : IQuery<TEntity> where TE
     Task<TEntity> UpdateAsync(TEntity entity);
 
     Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false);
+
+    Task<int> UpdateExecuteAsync(Expression<Func<TEntity,bool>> predicate, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
 }

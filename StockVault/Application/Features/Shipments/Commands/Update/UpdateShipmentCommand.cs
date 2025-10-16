@@ -52,6 +52,7 @@ public class UpdateShipmentCommand:IRequest<UpdatedShipmentResponse>, ITransacti
                 await _shipmentBusinessRules.CheckIfProductStockExists(shipment.ProductId, shipment.WarehouseId);
                 await _shipmentBusinessRules.CheckIfWarehouseHasEnoughCapacity(shipment.WarehouseId, shipment.Quantity);
 
+                /*
                 ProductStock? productStock = await _productStockRepository.GetAsync(
                     predicate: ps => ps.ProductId == shipment.ProductId && ps.WarehouseId == shipment.WarehouseId
                 );
@@ -63,6 +64,17 @@ public class UpdateShipmentCommand:IRequest<UpdatedShipmentResponse>, ITransacti
 
                 warehouse.CurrentCapacity += shipment.Quantity;
                 await _warehouseRepository.UpdateAsync(warehouse);
+                */
+
+                await _productStockRepository.UpdateExecuteAsync(
+                predicate: ps => ps.ProductId == shipment.ProductId && ps.WarehouseId == shipment.WarehouseId,
+                setPropertyCalls: p => p.SetProperty(ps => ps.Quantity,
+                                                           ps => ps.Quantity + shipment.Quantity));
+
+                await _warehouseRepository.UpdateExecuteAsync(
+                    predicate: w => w.Id == shipment.WarehouseId,
+                    setPropertyCalls: p => p.SetProperty(w => w.CurrentCapacity,
+                                                               w => w.CurrentCapacity + shipment.Quantity));
             }
 
             return _mapper.Map<UpdatedShipmentResponse>(shipment);

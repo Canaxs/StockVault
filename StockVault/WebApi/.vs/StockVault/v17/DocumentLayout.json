@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\WebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23478EAE-A7F5-44CC-AFFD-9FD1340872C5}|..\\Persistence\\Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\stockvault\\persistence\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2B08C3B-5DDE-4E80-815D-DF09DC34143A}|WebApi.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\stockvault\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2B08C3B-5DDE-4E80-815D-DF09DC34143A}|WebApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1682970-501D-49F0-929C-87DFD62903A4}|..\\Application\\Application.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\stockvault\\application\\features\\productstocks\\commands\\update\\updateproductstockcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,32 +13,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\WebApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAAAEYAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T09:08:51.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PersistenceServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\Persistence\\PersistenceServiceRegistration.cs",
-              "RelativeDocumentMoniker": "..\\Persistence\\PersistenceServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\Persistence\\PersistenceServiceRegistration.cs",
-              "RelativeToolTip": "..\\Persistence\\PersistenceServiceRegistration.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwCIAAABWAAAA",
+              "Title": "UpdateProductStockCommand.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\Application\\Features\\ProductStocks\\Commands\\Update\\UpdateProductStockCommand.cs",
+              "RelativeDocumentMoniker": "..\\Application\\Features\\ProductStocks\\Commands\\Update\\UpdateProductStockCommand.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\StockVault\\Application\\Features\\ProductStocks\\Commands\\Update\\UpdateProductStockCommand.cs",
+              "RelativeToolTip": "..\\Application\\Features\\ProductStocks\\Commands\\Update\\UpdateProductStockCommand.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAkwDoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T08:51:39.286Z",
+              "WhenOpened": "2025-10-16T08:53:21.596Z",
               "EditorCaption": ""
             }
           ]

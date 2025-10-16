@@ -43,11 +43,18 @@ public class CreateProductStockCommand:IRequest<CreatedProductStockResponse>,ITr
 
             await _productStockRepository.AddAsync(productStock);
 
+            /*
             Warehouse warehouse = await _warehouseRepository.GetAsync(predicate: w => w.Id == request.WarehouseId);
 
             warehouse.CurrentCapacity += productStock.Quantity;
 
             await _warehouseRepository.UpdateAsync(warehouse);
+            */
+
+            await _warehouseRepository.UpdateExecuteAsync(
+                predicate: w => w.Id == request.WarehouseId,
+                setPropertyCalls: p => p.SetProperty(w => w.CurrentCapacity,
+                                                           w => w.CurrentCapacity + productStock.Quantity));
 
             return _mapper.Map<CreatedProductStockResponse>(productStock);
         }

@@ -28,19 +28,16 @@ public class ShipmentBusinessRules:BaseBusinessRules
         _warehouseRepository = warehouseRepository;
     }
 
-    public async Task<ProductStock> CheckIfSufficientProductStockExists(int productId, int warehouseId, int quantity)
+    public async Task CheckIfSufficientProductStockExists(int productId, int warehouseId, int quantity)
     {
-        ProductStock? result = await _productStockRepository.GetAsync(
-            predicate: ps => ps.ProductId == productId && ps.WarehouseId == warehouseId
+        bool exists = await _productStockRepository.AnyAsync(
+            predicate: ps => ps.ProductId == productId 
+            && ps.WarehouseId == warehouseId
+            && ps.Quantity >= quantity
             );
 
-        if (result is null)
-            throw new NotFoundException(ShipmentMessages.ProductNotFoundInWarehouse);
-
-        if (result.Quantity < quantity)
-            throw new BusinessException(ShipmentMessages.InsufficientProductStock);
-
-        return result;
+        if (!exists)
+            throw new NotFoundException(ShipmentMessages.InsufficientOrMissingProductStock);
     }
 
     public async Task CheckIfProductStockExists(int productId, int warehouseId)

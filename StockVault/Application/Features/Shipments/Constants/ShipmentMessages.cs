@@ -15,4 +15,5 @@ public class ShipmentMessages
     public const string WarehouseCapacityExceeded = "The warehouse does not have enough capacity for this quantity.";
     public const string ProductStockNotFound = "No product stock found for the specified product and warehouse.";
     public const string ShipmentNotFoundOrNotPending = "The shipment does not exist or is not in Pending status.";
+    public const string InsufficientOrMissingProductStock = "Product not found in this warehouse or insufficient stock.";
 }

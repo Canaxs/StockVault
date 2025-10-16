@@ -44,11 +44,19 @@ public class DeleteProductStockCommand: IRequest<DeletedProductStockResponse>, I
 
             await _productStockRepository.DeleteAsync(productStock);
 
+            /*
+
             Warehouse warehouse = await _warehouseRepository.GetAsync(predicate: w => w.Id == warehouseId);
 
             warehouse.CurrentCapacity -= quantity;
 
             await _warehouseRepository.UpdateAsync(warehouse);
+            */
+
+            await _warehouseRepository.UpdateExecuteAsync(
+                predicate: w => w.Id == warehouseId,
+                setPropertyCalls: p => p.SetProperty(w => w.CurrentCapacity,
+                                                           w => w.CurrentCapacity - quantity));
 
             return _mapper.Map<DeletedProductStockResponse>(productStock);
         }

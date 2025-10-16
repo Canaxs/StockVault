@@ -5,6 +5,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,7 @@ public class CreateShipmentCommand:IRequest<CreatedShipmentResponse>, ITransacti
 
         public async Task<CreatedShipmentResponse> Handle(CreateShipmentCommand request, CancellationToken cancellationToken)
         {
-            ProductStock productStock = await _shipmentBusinessRules.CheckIfSufficientProductStockExists(request.ProductId, request.WarehouseId, request.Quantity);
+            await _shipmentBusinessRules.CheckIfSufficientProductStockExists(request.ProductId, request.WarehouseId, request.Quantity);
 
             await _shipmentBusinessRules.CheckIfCustomerIdExists(request.CustomerId);
 
@@ -50,6 +51,7 @@ public class CreateShipmentCommand:IRequest<CreatedShipmentResponse>, ITransacti
 
             await _shipmentRepository.AddAsync(shipment);
 
+            /*
             productStock.Quantity -= request.Quantity;
 
             await _productStockRepository.UpdateAsync(productStock);
@@ -59,6 +61,17 @@ public class CreateShipmentCommand:IRequest<CreatedShipmentResponse>, ITransacti
             warehouse.CurrentCapacity -= request.Quantity;
 
             await _warehouseRepository.UpdateAsync(warehouse);
+            */
+
+            await _productStockRepository.UpdateExecuteAsync(
+                predicate: ps => ps.ProductId == request.ProductId && ps.WarehouseId == request.WarehouseId,
+                setPropertyCalls: p => p.SetProperty(ps => ps.Quantity,
+                                                           ps => ps.Quantity - request.Quantity));
+
+            await _warehouseRepository.UpdateExecuteAsync(
+                predicate: w => w.Id == request.WarehouseId,
+                setPropertyCalls: p => p.SetProperty(w => w.CurrentCapacity,
+                                                           w => w.CurrentCapacity - request.Quantity));
 
             return _mapper.Map<CreatedShipmentResponse>(shipment);
 
