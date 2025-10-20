@@ -3,6 +3,21 @@
   "WorkspaceRootPath": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{451ACAD5-6918-48F3-95E6-2EEFCFDB901C}|..\\Core.Application\\Core.Application.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.application\\pipelines\\authorization\\authorizationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E940350-1AB1-48B5-9D98-9148D24B6A30}|..\\Core.Security\\Core.Security.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.security\\extensions\\claimprincipalextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E940350-1AB1-48B5-9D98-9148D24B6A30}|..\\Core.Security\\Core.Security.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.security\\extensions\\claimsextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E940350-1AB1-48B5-9D98-9148D24B6A30}|..\\Core.Security\\Core.Security.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.security\\jwt\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451ACAD5-6918-48F3-95E6-2EEFCFDB901C}|..\\Core.Application\\Core.Application.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.application\\pipelines\\authorization\\isecuredrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|c:\\users\\meroc\\documents\\github\\stockvault\\core\\core.persistence\\repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{603C1586-95C9-475F-83BB-D528D1B7E2E5}|Core.Persistence.csproj|solutionrelative:repositories\\efrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,20 +29,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "..\\Core.Security\\JWT\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\JWT\\JwtHelper.cs",
+              "RelativeToolTip": "..\\Core.Security\\JWT\\JwtHelper.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T13:57:44.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClaimsExtension.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\Extensions\\ClaimsExtension.cs",
+              "RelativeDocumentMoniker": "..\\Core.Security\\Extensions\\ClaimsExtension.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\Extensions\\ClaimsExtension.cs",
+              "RelativeToolTip": "..\\Core.Security\\Extensions\\ClaimsExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T13:57:04.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClaimPrincipalExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\Extensions\\ClaimPrincipalExtensions.cs",
+              "RelativeDocumentMoniker": "..\\Core.Security\\Extensions\\ClaimPrincipalExtensions.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Security\\Extensions\\ClaimPrincipalExtensions.cs",
+              "RelativeToolTip": "..\\Core.Security\\Extensions\\ClaimPrincipalExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T13:56:54.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthorizationBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Authorization\\AuthorizationBehavior.cs",
+              "RelativeDocumentMoniker": "..\\Core.Application\\Pipelines\\Authorization\\AuthorizationBehavior.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Authorization\\AuthorizationBehavior.cs",
+              "RelativeToolTip": "..\\Core.Application\\Pipelines\\Authorization\\AuthorizationBehavior.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T12:53:42.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ISecuredRequest.cs",
+              "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Authorization\\ISecuredRequest.cs",
+              "RelativeDocumentMoniker": "..\\Core.Application\\Pipelines\\Authorization\\ISecuredRequest.cs",
+              "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Application\\Pipelines\\Authorization\\ISecuredRequest.cs",
+              "RelativeToolTip": "..\\Core.Application\\Pipelines\\Authorization\\ISecuredRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T12:53:41.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "EfRepositoryBase.cs",
               "DocumentMoniker": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
               "RelativeDocumentMoniker": "Repositories\\EfRepositoryBase.cs",
               "ToolTip": "C:\\Users\\meroc\\Documents\\GitHub\\StockVault\\Core\\Core.Persistence\\Repositories\\EfRepositoryBase.cs",
               "RelativeToolTip": "Repositories\\EfRepositoryBase.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAcwKQAAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T11:18:04.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T11:18:04.48Z"
             }
           ]
         }

@@ -64,7 +64,19 @@ builder.Services.AddSwaggerGen(opt =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowViteDev",
+        policy => policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+
 var app = builder.Build();
+
+app.UseCors("AllowViteDev");
 
 await app.Services.InitializeDatabase(); // Eðer ilk kez kullanýyorsanýz burayý aktif etmelisiniz
 

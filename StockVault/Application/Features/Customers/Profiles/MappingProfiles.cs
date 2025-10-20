@@ -46,5 +46,7 @@ public class MappingProfiles:Profile
 
         CreateMap<Paginate<GetListProductByCustomerIdListItemDto>, GetListResponse<GetListProductByCustomerIdListItemDto>>().ReverseMap();
 
+        CreateMap<Paginate<Shipment>, GetListResponse<GetListShipmentByCustomerIdListItemDto>>().ReverseMap();
+
     }
 }

@@ -19,4 +19,6 @@ public static class ClaimsPrincipalExtensions
 
     public static int GetUserId(this ClaimsPrincipal claimsPrincipal) =>
         Convert.ToInt32(claimsPrincipal?.Claims(ClaimTypes.NameIdentifier)?.FirstOrDefault());
+    public static string? GetUsername(this ClaimsPrincipal claimsPrincipal) =>
+        claimsPrincipal?.Claims(ClaimTypes.Name)?.FirstOrDefault();
 }
